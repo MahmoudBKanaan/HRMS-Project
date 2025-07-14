@@ -1,4 +1,4 @@
-public class salaryDetails {
+/* public class salaryDetails {
     private Long id;
     private String employeeName;
     private String position;
@@ -35,4 +35,4 @@ public class SalaryDetail {
 
 
     // Getters and Setters
-}
+} */

@@ -1,4 +1,4 @@
-public class LeaveRequest {
+/* public class LeaveRequest {
     private Long id;
     private String reason;
     private LocalDate startDate;
@@ -30,4 +30,4 @@ public class AttendanceRecord {
 
 
     // Getters and Setters
-}
+} */
