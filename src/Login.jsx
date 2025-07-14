@@ -1,0 +1,92 @@
+  import { useContext, useState } from 'react'
+  import './Login.css'
+  import { mockLogin } from '../Server/mockLogin';
+  import { useNavigate, Link } from 'react-router-dom';
+import { AuthContext } from './AuthContext';
+
+
+
+
+  function Login() {
+    const [count, setCount] = useState(0)
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [valError, setValError] = useState("");
+    const [error , setError] = useState("")
+    const [rememberMe , setRememberMe] = useState(false);
+    const navigate = useNavigate();
+    const {setIsAuthenticated} = useContext(AuthContext)
+
+    const validateInput = () => {
+      if      (!email)                                          {  return"Email is required!"}
+      else if (!email.includes("@") || !email.includes(".com")) {  return"Email is incorrect!"}
+      else if (!password)                                       {  return"Password is required!"}
+      else if (!/[a-z]/.test(password))                         {  return"Password must contain small letters"}
+      else if (!/[A-Z]/.test(password))                         { return"Password must contain Capital letters"}
+      else if (!/[0-9]/.test(password))                         {  return"Password must contain numbers"}
+      else if (!/[!@#$%^&]/.test(password))                     { return"Password must contain symbols !@#$%^& "}  
+      return
+    }
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    const errorMessage = validateInput();
+    setError(errorMessage)
+
+    if(!errorMessage) {
+      try { 
+        const res = await mockLogin (email, password)
+        if (res.success) {     
+          setIsAuthenticated(true);
+          console.log("Login Successful")
+          const token = res.token;
+          if (rememberMe) {localStorage.setItem("token", token);} 
+          else {sessionStorage.setItem("token", token);}
+          navigate("/dashboard");
+        }
+      } catch (err) {
+        setError(err.message);
+      }}}
+      
+
+  return (
+      <div className="login-page">
+        <div className="login-container">     
+              {/* Login Form */}
+              <div className="login-form-wrapper">
+                <h2 className="login-title">Login</h2>
+                    <form className="login-form" onSubmit={(e) => handleLogin(e)}>
+                      <div>
+                          <input   type="text"  placeholder="admin@mail.com"  className="Username-input" value={email} onChange={(e) => setEmail(e.target.value)} />
+                      </div>
+                      <div>
+                          <input type="password"  placeholder="Ss@225588" className="Password-input" value={password} onChange={(e) => setPassword(e.target.value)} />
+                      </div>
+                      <div className='errorMessageWrapper' >{error && <p className='errorMessage'>{error}</p>} </div>
+                      <div className="checkbox-wrapper">
+                          <input type="checkbox" id="remember" className="checkbox-input" checked={rememberMe} onChange={(e) => {setRememberMe(e.target.checked)}} />
+                          <label htmlFor="remember">Remember me</label>
+                      </div>
+                      <button type="submit" className="login-button">
+                          Sign in
+                      </button>
+                      <div className="forgot-password">
+                      <Link  className="forgotPasswordButton" to="/forgotpassword"  >Forgot Password</Link>
+                      </div>
+                    </form>
+              </div>
+              
+        </div>
+        <div><img src="/src/assets/loginWoman.svg"  alt="loginWoman"  className='loginWoman'/></div>
+        <div><img src="/src/assets/login01.svg"     alt="login01"     className='login01'   /></div>
+        <div><img src="/src/assets/login02.svg"     alt="login02"     className='login02'   /></div>
+        <div><img src="/src/assets/login03.svg"     alt="login03"     className='login03'   /></div>
+        <div><img src="/src/assets/login04.svg"     alt="login04"     className='login04'   /></div>
+        <div><img src="/src/assets/loginMan.svg"    alt="loginMan"    className='loginMan'  /></div>
+
+      </div>
+    );
+  }
+
+  export default Login

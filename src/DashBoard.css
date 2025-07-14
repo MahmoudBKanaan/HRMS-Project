@@ -1,0 +1,152 @@
+.dashboardContainer {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+font-family: Roboto, sans-serif;
+background-Color: #0D1B2B;
+color: #dedede;
+Height: 100vh;
+width: 100vw;
+}
+/* -------------------------------SideBar---------------------------------------- */
+    .side-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;    
+    align-items:center;
+    background-Color: #172b3f;
+    width: 13vw;
+    Height: 100vh;
+    }
+    .logo {
+    font-family: Roboto, sans-serif;
+    font-Size: 3.5vw;
+    padding: 0.9vw;
+    font-Weight: bold;
+    }
+    .navList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    list-Style: none;
+    padding: 0 0 0 0;
+    width: 13vw;
+    }
+    .navItem {
+    font-family: Roboto, sans-serif;
+    color:#dedede;
+    font-weight: 300;
+    font-size: 2.3vh;
+    margin-Bottom: 0.5vh;
+    display: flex;
+    align-Items: center;
+    gap: 1.2vh;
+    cursor: pointer;
+    width:9vw;
+    height: 3.5vw;
+    padding: 0 2vw;
+    }
+    .navItem:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    }
+    .navItem.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    }
+/* ----------------------------------------------------------------------- */
+
+    
+    
+
+
+
+.mainContent {
+    width: 100%;
+flex: 1;
+
+}
+.navbar {
+display: flex;
+justify-content: space-between;
+align-Items: center;
+margin-Bottom: 20px;
+}
+.userMenu {
+position: relative;
+}
+.avatar {
+width: 40px;
+height: 40px;
+border-Radius: 50%;
+}
+.dropdown {
+background-Color: #1C2C3A;
+position: absolute;
+right: 0;
+top: 50px;
+padding: 10px;
+border-Radius: 5px;
+z-Index: 1;
+}
+.dropdownList {
+list-Style: none;
+padding: 0;
+}
+.profileSection {
+display: flex;
+align-Items: center;
+gap: 20px;
+margin-Bottom: 20px;
+}
+.profileImg {
+width: 120px;
+height: 120px;
+border-Radius: 50%;
+}
+.profileInfo {
+display: flex;
+flex-Direction: column;
+gap: 10px;
+}
+.checkInBtn {
+margin-Right: 10px;
+background-Color: #2962FF;
+color: white;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+border-Radius: 4px;
+}
+.checkOutBtn {
+background-Color: #C2185B;
+color: white;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+border-Radius: 4px;
+}
+.statsContainer {
+display: flex;
+gap: 20px;
+margin-Top: 20px;
+}
+.statsCard {
+background-Color: #1C2C3A;
+
+border-Radius: 10px;
+flex: 1;
+}
+.iconWrapper {
+font-Size: 24px;
+margin-Bottom: 10px;
+}
+.detailsGrid {
+background-Color: #1C2C3A;
+
+border-Radius: 10px;
+margin-Top: 10px;
+display: grid;
+gap: 10px;
+}
