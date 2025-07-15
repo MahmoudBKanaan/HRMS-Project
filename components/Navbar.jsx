@@ -5,12 +5,6 @@ import { useNavigate } from "react-router-dom";
 import "./Navbar.css"
 
 
-
-
-
-
-
-
 export const Navbar = ( {navTitle, navText} ) => {
 
    const [settingMessage, setSettingMessage] = useState(""); 
@@ -18,9 +12,10 @@ export const Navbar = ( {navTitle, navText} ) => {
    const navigate = useNavigate();
    
    const handleSettingClick = () => {
-      setSettingMessage("The settings page does not currently exist");
-      setTimeout( () => {
-      setSettingMessage("");
+      setSettingMessage("You will be directed to the settings page.")
+     setTimeout( () => {
+       setSettingMessage("");
+       navigate("/settings");
       }, 5000 )
    }
 

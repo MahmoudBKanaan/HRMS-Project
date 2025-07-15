@@ -1,10 +1,19 @@
-import React from 'react';
+import {Sidebar} from "/components/Sidebar.jsx";
+import { Navbar } from '../components/Navbar';
+import "./Documents.css"
 
 const Documents = () => {
     return (
-        <div>
-            <h1>Documents</h1>
-            {/* Add your document-related components or logic here */}
+        <div className='DocumentsContainer'>
+        <Sidebar />
+        <div className="mainContent">
+        <Navbar  navTitle="Documents" navText="Manage Documents" />
+            
+
+
+
+
+        </div>
         </div>
     );
 };

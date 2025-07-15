@@ -1,15 +1,13 @@
 import {Sidebar} from "/components/Sidebar.jsx";
 import { Navbar } from '../components/Navbar';
-import "./attendance.css"
+import "./Settings.css";
 
-const Attendance = () => {
-
-
+const Settings = () => {
     return (
-        <div className='AttendanceContainer'>
+        <div className='SettingsContainer'>
         <Sidebar />
         <div className="mainContent">
-        <Navbar  navTitle="Attendance" navText="Attendance Records" />
+        <Navbar  navTitle="Settings" navText="Manage all settings" />
             
 
 
@@ -20,4 +18,4 @@ const Attendance = () => {
     );
 };
 
-export default Attendance;
+export default Settings;

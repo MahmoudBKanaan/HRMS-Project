@@ -1,0 +1,16 @@
+.AttendanceContainer {
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+justify-content: center;
+font-family: Roboto, sans-serif;
+background-Color: #0d1b2b;
+color: #dedede;
+Height: 100vh;
+width: 100vw;
+}
+.mainContent {
+top:0%;
+width: 87vw;
+flex: 1;
+}

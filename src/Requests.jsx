@@ -1,9 +1,18 @@
-import React from 'react';
+import {Sidebar} from "/components/Sidebar.jsx"
+import { Navbar } from '../components/Navbar';
 
 const Requests = () => {
     return (
-        <div> Requests
-            {/* Requests component content goes here */}
+        <div className='AttendanceContainer'>
+        <Sidebar />
+        <div className="mainContent">
+        <Navbar  navTitle="Requests" navText="Manage Requests" />
+            
+
+
+
+
+        </div>
         </div>
     );
 };

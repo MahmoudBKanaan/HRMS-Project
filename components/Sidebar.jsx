@@ -2,6 +2,7 @@ import { FaHome, FaUser, FaCheckCircle, FaMoneyBillWave, FaFileAlt } from 'react
 import { useLocation , Link} from "react-router-dom";
 import { MdRequestPage } from 'react-icons/md';
 import "./Sidebar.css";
+import { FiSettings } from 'react-icons/fi';
 
 
 
@@ -34,6 +35,9 @@ export const Sidebar = () => {
     <li ><Link 
        className={`navItem ${location.pathname === "/documents" ? "active" : ""}`} 
        to="/documents" ><FaFileAlt /> Documents</Link></li>
+    <li ><Link 
+       className={`navItem ${location.pathname === "/settings" ? "active" : ""}`} 
+       to="/settings" ><FiSettings /> Settings</Link></li>
     </ul>
     </nav>
     </div>

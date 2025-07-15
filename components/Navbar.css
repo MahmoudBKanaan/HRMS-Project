@@ -1,102 +1,103 @@
-        .navbar {
-        display: flex;
-        justify-content:space-between;
-        padding: 0 3vw  ;
-        align-Items: center;
-        margin-Bottom: 2vw;
-        background-color: #2962FF;
+.navbar {
+display: flex;
+justify-content:space-between;
+padding: 0 3vw  ;
+align-Items: center;
+margin-Bottom: 2vw;
 
-        }
-        .navbar-title {
-            font-size: 2.4vw ;
-            font-family: Roboto;
-            font-weight: 600;
-            padding: 0;
-            margin: 2vw 0 0 0;
-            display: flex;
-            letter-spacing: 0.10vw;
 
-        }
-        .navbar-text {
-            font-size: 1.4vw ;
-            font-weight: 400;
-            display:flex;
-            margin-bottom: 1vw ;
-            padding: 0;
-            margin-top:0.5vw;
+}
+.navbar-title {
+font-size: 2.4vw ;
+font-family: Roboto;
+font-weight: 600;
+padding: 0;
+margin: 2vw 0 0 0;
+display: flex;
+letter-spacing: 0.10vw;
 
-        }
-        .userMenu {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        cursor:pointer;
-        border-radius: 2.5vw;
-        }
+}
+.navbar-text {
+font-size: 1.4vw ;
+font-weight: 400;
+display:flex;
+margin-bottom: 1vw ;
+padding: 0;
+margin-top:0.5vw;
 
-     
-        .avatar {        
-        width: 5vw;
-        height: 5vw;
-        border-Radius: 50%;
-        box-shadow: 0.05vw 0.05vw 0.2vw 0 rgb(33,33,33);
+}
+.userMenu {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+cursor:pointer;
+border-radius: 2.5vw;
+}
 
-        }
-        .dropdown {
-        background-Color: #172b3f;
-        position:absolute;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        margin: 0.2vw;
-        right: 0.8vw;
-        top: 6.6vw;
-        width: 9vw;
-        height: 5.4vw;
-        padding:0 ;
-        z-Index: 1;
-        }
-        .dropdownList {
-        list-Style: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-        margin:0;
-        }
-        .dropdownListItem {
-        font-size: 0.95vw;
-        display: flex;
-        flex-direction: row;
-        gap: 0.5vw;
-        justify-content: center;
-        align-items: center;
-        margin:0;
-        list-Style: none;
-        padding: 0;
-        width: 9vw;
-        height:2.7vw;
-        cursor:pointer;
-        z-Index: 2;
-        }
-        .dropdownListItem:hover {
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-        .settingMessage {
-            position: fixed;
-            top: 42vh;
-            left: 35vw;
-            border-radius: 1vw;
-            background-Color: #172b3f;
-            box-shadow: 0.005vw 0.005vw 0.09vw #dedede ;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #dedede;
-            width: 30vw;
-            height:16vh;
 
-        }
+.avatar {        
+width: 4vw;
+height: 4vw;
+transform: translate(-0.5vw , 0);
+border-Radius: 50%;
+box-shadow: 0.05vw 0.05vw 0.2vw 0 rgb(33,33,33);
+
+}
+.dropdown {
+background-Color: #172b3f;
+position:absolute;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+margin: 0.2vw;
+right: 0.8vw;
+top: 6.6vw;
+width: 9vw;
+height: 5.4vw;
+padding:0 ;
+z-Index: 1;
+}
+.dropdownList {
+list-Style: none;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0;
+margin:0;
+}
+.dropdownListItem {
+font-size: 0.95vw;
+display: flex;
+flex-direction: row;
+gap: 0.5vw;
+justify-content: center;
+align-items: center;
+margin:0;
+list-Style: none;
+padding: 0;
+width: 9vw;
+height:2.7vw;
+cursor:pointer;
+z-Index: 2;
+}
+.dropdownListItem:hover {
+background-color: rgba(255, 255, 255, 0.05);
+}
+.settingMessage {
+position: fixed;
+top: 42vh;
+left: 35vw;
+border-radius: 1vw;
+background-Color: #172b3f;
+box-shadow: 0.005vw 0.005vw 0.09vw #dedede ;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #dedede;
+width: 30vw;
+height:16vh;
+
+}

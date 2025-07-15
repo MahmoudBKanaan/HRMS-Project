@@ -1,10 +1,18 @@
-import React from 'react';
+import {Sidebar} from "/components/Sidebar.jsx"
+import { Navbar } from '../components/Navbar';
 
 const Payroll = () => {
     return (
-        <div>
-            <h1>Payroll</h1>
-            {/* Add payroll components and logic here */}
+        <div className='AttendanceContainer'>
+        <Sidebar />
+        <div className="mainContent">
+        <Navbar  navTitle="Payroll" navText="View Payroll Details" />
+            
+
+
+
+
+        </div>
         </div>
     );
 };

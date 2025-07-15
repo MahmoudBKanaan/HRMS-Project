@@ -36,29 +36,37 @@ const Dashboard = () => {
       <Sidebar />
         <div className="mainContent">
         <Navbar  navTitle="Dashboard" navText="Welcome Back Neo Arel" />
+
+        
           <div className="profileSection">
-          <img src="/profile.jpg" alt="Neo Arel" className="profileImg" />
-          <div className="profileInfo">
-          <h2>Neo Arel</h2>
-          <p>Software Engineer</p>
-          <div>
-          <p><strong>Email:</strong> Neo7368@gmail.com</p>
-          <p><strong>Phone:</strong> 057 63 66 939</p>
-          <p><strong>Hire Date:</strong> March 22, 2025</p>
-          <p><strong>Employee ID:</strong> 224867</p>
+            <img src="src/assets/profileImage.png" alt="Neo Arel" className="profileImg" />
+              <div className="profileInfo">
+                <div className='ProfileUpperSection' > 
+                  <div className='NameRoleWrapper' >
+                  <h2 className='EmployeeName' >Neo Arel</h2>
+                  <p className='EmployeeRole'>Software Engineer</p>
+                  </div>
+                  <div className='ButtonsWrapper' >
+                  <button className="checkInBtn">Check-In</button>
+                  <button className="checkOutBtn">Check-Out</button>
+                  </div>
+                </div>
+                <div className='ProfileLowerSection'  >
+                <p><strong>Email:</strong> Neo7368@gmail.com</p>
+                <p><strong>Phone:</strong> 057 63 66 939</p>
+                <p><strong>Hire Date:</strong> March 22, 2025</p>
+                <p><strong>Employee ID:</strong> 224867</p>
+                </div>
+              </div>
           </div>
-          <div>
-          <button className="checkInBtn">Check-In</button>
-          <button className="checkOutBtn">Check-Out</button>
-          </div>
-          </div>
-          </div>
-          <div className="statsContainer">
+
+
+{/*           <div className="statsContainer">
           <StatsCard icon={<FaUser />} label="Department" value="IT" />
           <StatsCard icon={<FaMoneyBillWave />} label="Payroll" value="$500,000" />
           <StatsCard icon={<FaCheckCircle />} label="Attendance" value="96%" sub="4.2 ★★★★☆" />
           </div>
-        <PersonalDetails />
+        <PersonalDetails /> */}
         </div>
     </div>
   
