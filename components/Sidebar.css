@@ -1,0 +1,47 @@
+/* -------------------------------SideBar---------------------------------------- */
+    .side-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;    
+    align-items:center;
+    background-Color: #172b3f;
+    width: 13vw;
+    Height: 100vh;
+    }
+    .logo {
+    font-family: Roboto, sans-serif;
+    font-Size: 3.5vw;
+    padding: 0.9vw;
+    font-Weight: bold;
+    }
+    .navList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    list-Style: none;
+    padding: 0 0 0 0;
+    width: 13vw;
+    }
+    .navItem {
+    font-family: Roboto, sans-serif;
+    color:#dedede;
+    font-weight: 300;
+    font-size: 2.3vh;
+    margin-Bottom: 0.5vh;
+    display: flex;
+    align-Items: center;
+    gap: 1.2vh;
+    cursor: pointer;
+    width:9vw;
+    height: 3.5vw;
+    padding: 0 2vw;
+    }
+    .navItem:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    }
+    .navItem.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    }
+/* ----------------------------------------------------------------------- */

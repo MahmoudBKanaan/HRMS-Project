@@ -1,6 +1,6 @@
 import "./ForgotPassword.css"
 import { useState } from 'react'
-import { mockLogin } from '../Server/mockLogin';
+import { mockLogin } from '../mock-Server/mockLogin';
 import { Navigate ,useNavigate, Link } from 'react-router-dom';
 
 

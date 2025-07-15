@@ -1,64 +1,11 @@
-import { FaHome, FaUser, FaCheckCircle, FaMoneyBillWave, FaFileAlt } from 'react-icons/fa';
-import { MdRequestPage } from 'react-icons/md';
-import { FiSettings, FiLogOut } from 'react-icons/fi';
-import  {useLocation, Link} from "react-router-dom"
+import { FaUser, FaCheckCircle, FaMoneyBillWave } from 'react-icons/fa';
+
+import {Sidebar} from "/components/Sidebar.jsx"
 import "./DashBoard.css";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Navbar } from '../components/Navbar';
 
-
-export const Sidebar = () => {
-
-  const location = useLocation();
-  console.log(location.pathname);
-
-  return (
-    <aside className="side-bar">
-    <div className="logo">HRMS</div>
-    <div className="navListGroup">
-    <nav>
-    <ul className="navList">
-    
-    <li ><Link 
-    className={`navItem ${location.pathname === "/dashboard" ? "active" : ""}`} 
-    to="/dashboard" ><FaHome /> DashBoard </Link></li>
-    <li ><Link 
-      className={`navItem ${location.pathname === "/employees" ? "active" : ""}`} 
-      to="/employees" ><FaUser /> Employees </Link></li>
-    <li ><Link 
-      className={`navItem ${location.pathname === "/attendance" ? "active" : ""}`} 
-      to="/attendance" ><FaCheckCircle /> Attendance</Link></li>
-    <li ><Link 
-       className={`navItem ${location.pathname === "/requests" ? "active" : ""}`} 
-       to="/requests" > <MdRequestPage /> Requests</Link></li>
-    <li ><Link 
-      className={`navItem ${location.pathname === "/payroll" ? "active" : ""}`} 
-      to="/payroll" ><FaMoneyBillWave /> Payroll </Link></li>
-    <li ><Link 
-       className={`navItem ${location.pathname === "/documents" ? "active" : ""}`} 
-       to="/documents" ><FaFileAlt /> Documents</Link></li>
-    </ul>
-    </nav>
-    </div>
-    </aside>
-  )};
-
-
-const Navbar = () => (
-  <header className="navbar">
-    <div>
-      <h1>DashBoard</h1>
-      <p>Welcome back, Neo Arel.</p>
-    </div>
-    <div className="userMenu">
-      <img src="/profile.jpg" alt="Profile" className="avatar" />
-      <div className="dropdown">
-        <ul className="dropdownList">
-          <li><FiSettings /> Settings</li>
-          <li><FiLogOut /> Log out</li>
-        </ul>
-      </div>
-    </div>
-  </header>
-);
 
 const StatsCard = ({ icon, label, value, sub }) => (
   <div className="statsCard">
@@ -83,15 +30,12 @@ const PersonalDetails = () => (
 
 const Dashboard = () => {
 
-
-
-
   return (
 
     <div className="dashboardContainer">
       <Sidebar />
         <div className="mainContent">
-        <Navbar />
+        <Navbar  navTitle="Dashboard" navText="Welcome Back Neo Arel" />
           <div className="profileSection">
           <img src="/profile.jpg" alt="Neo Arel" className="profileImg" />
           <div className="profileInfo">

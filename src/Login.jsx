@@ -1,6 +1,6 @@
   import { useContext, useState } from 'react'
   import './Login.css'
-  import { mockLogin } from '../Server/mockLogin';
+  import { mockLogin } from '../mock-Server/mockLogin';
   import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from './AuthContext';
 
