@@ -1,0 +1,131 @@
+
+
+
+/*---------------------Profile Section----------------------------*/
+.profileSection {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-Items: center;
+gap: 4vw;
+padding: 0.5vw 0vw;
+
+}
+.profileImg {
+width: 10vw;
+height: 10vw;
+border-Radius: 50%;
+background-color: #303b5a;
+transform: translate(0 , -0.2vw);
+border-Radius: 50%;
+box-shadow: 0.05vw 0.05vw 0.2vw 0 rgb(33,33,33);
+
+}
+.profileInfo {
+display: flex;
+flex-Direction:column;
+align-items: center;
+justify-content: center;
+justify-items: center;
+gap:1.5vw;
+
+}
+.ProfileUpperSection {
+display: flex;
+flex-Direction:row;
+align-items: flex-start;
+justify-content: center;
+width: 100%;
+height: 11.5vh;
+gap: 4vw;
+margin: 0;
+padding: 0;
+}
+.NameRoleWrapper {
+display: flex;
+padding: 0;
+margin: 0;
+line-height: 3vw;
+flex-Direction:column;
+align-items: flex-start;
+justify-content: flex-start;
+}
+.EmployeeName {
+font-size: 2.8vw;
+margin:0;
+padding:0;
+letter-spacing: 0.2vw;
+}
+.EmployeeRole {
+font-size: 1.4vw;
+margin:0;
+padding:0;
+}
+.ButtonsWrapper{
+display: flex;
+flex-Direction:row;
+align-items: center;
+transform: translate(0 ,1.7vw);
+justify-content: center;
+}
+.checkInBtn   {
+background-Color: #1450a0;
+margin-Right: 2.0vw;
+}
+.checkOutBtn {
+background-Color: #a01450;
+
+}
+.checkInBtn , .checkOutBtn  {
+color: #dedede;
+border: none;
+padding: 0.6vw 2.4vw;
+font-size: 1vw;
+cursor: pointer;
+border-Radius: 0.3vw;
+width: 12vw;
+height: 5vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.ProfileLowerSection {
+display: flex;
+flex-Direction:row;
+align-items:flex-start;
+justify-content: flex-start;
+margin: 0;
+padding: 0;
+font-family: Roboto;
+width: 100%;
+height: 10vh;
+gap:4vw;
+}
+.LowerSectionColumn {
+display: flex;
+flex-direction: column;
+transform: translate(0,0.5vw);
+gap: 2vw;
+}
+.LowerSectionTitle {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+gap:1vw;
+margin:0;
+padding:0;
+font-size: 1.1vw;
+font-weight: 400;
+color:#dedede;
+line-height: 0.2vw;
+}
+.LowerSectionText {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+font-size: 1vw;
+font-weight: 300;
+}
+/*-------------------------------------------------*/

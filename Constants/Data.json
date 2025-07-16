@@ -1,0 +1,54 @@
+{
+  "employeeId": "45467",
+  "firstName": "Neo",
+  "lastName": "Arel",
+  "middleName": "",
+  "email": "Neo7368@gmail.com",
+  "phone": "0576366939",
+  "address": "28th St, Dammam KSA",
+  "dateOfBirth": "1996-01-26",
+  "gender": "Male",
+  "hireDate": "2025-03-22",
+  "department": "IT Department",
+  "role": "Software Engineer",
+  "employmentStatus": "Active",
+  "attendance": {
+    "percentage": "99.20%",
+    "checkIn": "09:00",
+    "checkOut": "17:00"
+  },
+  "payroll": {
+    "baseSalary": 5000,
+    "housingBenefits": 1000,
+    "transportationBenefits": 500,
+    "foodBenefits": 300,
+    "commissions": 1500,
+    "deductions": 1000,
+    "netPay": 7300,
+    "paymentStatus": "Paid",
+    "paymentDate": "2025-12-15"
+  },
+  "documents": [
+    {
+      "title": "ID",
+      "type": "PDF",
+      "size": "85 KB",
+      "uploadedAt": "2025-02-06"
+    }
+  ],
+  "requests": {
+    "leave": {
+      "requestId": "45874",
+      "startDate": "2025-08-15",
+      "endDate": "2025-09-15",
+      "reason": "The employee is .....",
+      "status": "Approved"
+    },
+    "resignation": {
+      "requestId": "45874",
+      "date": "2025-09-15",
+      "reason": "The employee is .....",
+      "status": "Approved"
+    }
+  }
+}

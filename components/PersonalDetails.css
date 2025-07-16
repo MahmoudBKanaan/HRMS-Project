@@ -1,0 +1,47 @@
+
+.PersonalDetailsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transform: translate(15vw,0);
+    justify-content: center;
+    width: 58vw;
+}
+.PersonalDetailsTitle {
+    font-family: Roboto;
+    line-height: 3vw;
+    margin: 0.8vw  0 0.3vw 0;
+    font-size: 1.5vw;
+    font-weight: 400;
+}
+.detailsGrid {
+    width: 56.5vw;
+    height: 19vh;
+    border-Radius: 0.5vw;
+    background-color: #172b3f;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    line-height: 0.5vw;
+    font-size: 1.1vw;
+}
+.DetailsGridItem {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding: 0 0 0 1.5vw ; 
+    letter-spacing: 0.05vw;
+    font-weight: 400;
+}
+
+.DetailsGridValue {
+    position: absolute;
+    left:12vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+}
