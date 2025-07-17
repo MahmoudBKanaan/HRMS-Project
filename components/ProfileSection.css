@@ -51,10 +51,10 @@ align-items: flex-start;
 justify-content: flex-start;
 }
 .EmployeeName {
-font-size: 2.8vw;
+font-size: 2.5vw;
 margin:0;
 padding:0;
-letter-spacing: 0.2vw;
+letter-spacing: 0.0vw;
 }
 .EmployeeRole {
 font-size: 1.4vw;
@@ -75,6 +75,10 @@ margin-Right: 2.0vw;
 .checkOutBtn {
 background-Color: #a01450;
 
+}
+
+.redBackground {
+    background-Color: #a01450;
 }
 .checkInBtn , .checkOutBtn  {
 color: #dedede;

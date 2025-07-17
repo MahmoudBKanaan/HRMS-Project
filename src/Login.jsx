@@ -1,4 +1,4 @@
-  import { useContext, useState } from 'react'
+  import { useContext, useEffect, useState } from 'react'
   import './Login.css'
   import { mockLogin } from '../mock-Server/mockLogin';
   import { useNavigate, Link } from 'react-router-dom';
@@ -15,7 +15,7 @@ import { AuthContext } from './AuthContext';
     const [error , setError] = useState("")
     const [rememberMe , setRememberMe] = useState(false);
     const navigate = useNavigate();
-    const {setIsAuthenticated} = useContext(AuthContext)
+    const { isAdmin, setIsAdmin , setIsAuthenticated} = useContext(AuthContext)
 
     const validateInput = () => {
       if      (!email)                                          {  return"Email is required!"}
@@ -41,13 +41,36 @@ import { AuthContext } from './AuthContext';
           setIsAuthenticated(true);
           console.log("Login Successful")
           const token = res.token;
-          if (rememberMe) {localStorage.setItem("token", token);} 
-          else {sessionStorage.setItem("token", token);}
+          if (rememberMe) {
+            localStorage.setItem("token", token);
+          if (res.admin) {
+            setIsAdmin(true)
+            localStorage.setItem("isAdmin","true")
+          } else {
+            setIsAdmin(false)
+            localStorage.setItem("isAdmin","false")
+          }
+
+          }  else {
+            sessionStorage.setItem("token", token);
+          if (res.admin) {
+            setIsAdmin(true)
+            sessionStorage.setItem("isAdmin","true")
+          } else {
+            setIsAdmin(false)
+            sessionStorage.setItem("isAdmin","false")
+          }
+
+          }
           navigate("/dashboard");
         }
       } catch (err) {
         setError(err.message);
       }}}
+      
+/*       useEffect( () => {
+        console.log('Admin State has changed:'+isAdmin)
+      }, [isAdmin]) */
       
 
   return (
@@ -78,12 +101,12 @@ import { AuthContext } from './AuthContext';
               </div>
               
         </div>
-        <div><img src="/src/assets/loginWoman.svg"  alt="loginWoman"  className='loginWoman'/></div>
-        <div><img src="/src/assets/login01.svg"     alt="login01"     className='login01'   /></div>
-        <div><img src="/src/assets/login02.svg"     alt="login02"     className='login02'   /></div>
-        <div><img src="/src/assets/login03.svg"     alt="login03"     className='login03'   /></div>
-        <div><img src="/src/assets/login04.svg"     alt="login04"     className='login04'   /></div>
-        <div><img src="/src/assets/loginMan.svg"    alt="loginMan"    className='loginMan'  /></div>
+        <div><img src="/assets/loginWoman.svg"  alt="loginWoman"  className='loginWoman'/></div>
+        <div><img src="/assets/login01.svg"     alt="login01"     className='login01'   /></div>
+        <div><img src="/assets/login02.svg"     alt="login02"     className='login02'   /></div>
+        <div><img src="/assets/login03.svg"     alt="login03"     className='login03'   /></div>
+        <div><img src="/assets/login04.svg"     alt="login04"     className='login04'   /></div>
+        <div><img src="/assets/loginMan.svg"    alt="loginMan"    className='loginMan'  /></div>
 
       </div>
     );

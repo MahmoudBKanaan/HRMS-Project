@@ -1,0 +1,24 @@
+.unAuthorizedWrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.unAuthorizedMessage {
+border-radius: 1vw;
+background-Color: #172b3f;
+box-shadow: 0.005vw 0.005vw 0.09vw #dedede ;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+line-height: 1.5vw;
+padding: 0 ;
+font-size: 1.0vw;
+color: #dedede;
+width: 30vw;
+height:15vh;
+z-index: 2;
+
+}

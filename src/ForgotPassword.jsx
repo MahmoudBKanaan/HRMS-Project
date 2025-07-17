@@ -55,12 +55,12 @@ return (
             </div>
             
       </div>
-      <div><img src="/src/assets/loginWoman.svg"  alt="passwordWoman"  className='passwordWoman'/></div>
-      <div><img src="/src/assets/login01.svg"     alt="password01"     className='password01'   /></div>
-      <div><img src="/src/assets/login02.svg"     alt="password02"     className='password02'   /></div>
-      <div><img src="/src/assets/login03.svg"     alt="password03"     className='password03'   /></div>
-      <div><img src="/src/assets/login04.svg"     alt="password04"     className='password04'   /></div>
-      <div><img src="/src/assets/loginMan.svg"    alt="passwordMan"    className='passwordMan'  /></div>
+      <div><img src="/assets/loginWoman.svg"  alt="passwordWoman"  className='passwordWoman'/></div>
+      <div><img src="/assets/login01.svg"     alt="password01"     className='password01'   /></div>
+      <div><img src="/assets/login02.svg"     alt="password02"     className='password02'   /></div>
+      <div><img src="/assets/login03.svg"     alt="password03"     className='password03'   /></div>
+      <div><img src="/assets/login04.svg"     alt="password04"     className='password04'   /></div>
+      <div><img src="/assets/loginMan.svg"    alt="passwordMan"    className='passwordMan'  /></div>
 
     </div>
   );

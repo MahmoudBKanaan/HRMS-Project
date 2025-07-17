@@ -1,18 +1,21 @@
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FiSettings, FiLogOut } from 'react-icons/fi';
 import { useNavigate } from "react-router-dom";
 import "./Navbar.css"
+import { AuthContext } from "../src/AuthContext";
+import { admin, user } from "../Constants/Data";
 
 
 export const Navbar = ( {navTitle, navText} ) => {
 
    const [settingMessage, setSettingMessage] = useState(""); 
    const [dropDownMenu, setDropDownMenu] = useState(false); 
+   const {isAdmin, setIsAdmin, setIsAuthenticated,} = useContext(AuthContext)
    const navigate = useNavigate();
    
    const handleSettingClick = () => {
-      setSettingMessage("You will be directed to the settings page.")
+      setSettingMessage("You're being directed to the settings page.")
      setTimeout( () => {
        setSettingMessage("");
        navigate("/settings");
@@ -22,6 +25,8 @@ export const Navbar = ( {navTitle, navText} ) => {
    const handlelogOutClick = () => {
     localStorage.clear();
     sessionStorage.clear();
+    setIsAdmin(false);
+    setIsAuthenticated(false);
     navigate("/login");
    }
 
@@ -40,7 +45,7 @@ export const Navbar = ( {navTitle, navText} ) => {
       <p className="navbar-text" >{navText}</p>
     </div>
     <div className="userMenu" onClick={() => showDropDownMenu()} >
-      <img src="/src/assets/profileImage.png" alt="Profile" className="avatar" />
+      <img src={isAdmin?admin.ProfileImage:user.ProfileImage } alt="Profile" className="avatar" />
     </div> 
     </header>
 

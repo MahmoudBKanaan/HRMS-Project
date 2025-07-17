@@ -1,18 +1,24 @@
 import {AuthContext} from "./AuthContext"
 import { useContext } from "react"
 import { Navigate } from "react-router-dom";
+import "./RouteProtection.css";
+import "./index.css";
 
 
 
-const RouteProtection =  ({ children }) => {
+const RouteProtection =  ({ children, adminOnly = false }) => {
 
 
-    const {isAuthenticated, isLoading   } = useContext(AuthContext);
+    const {isAdmin ,isAuthenticated, isLoading   } = useContext(AuthContext);
 
-    if (isLoading)
-         {        return <div style={{ display: 'flex', justifyContent: 'center', width: "100vw", height: "100vw", backgroundcolor:"#dedede" , 
-            alignItems: 'center',fontFamily: 'Roboto'}} >Loading...</div>}
-    if (!isAuthenticated) {       return <Navigate to="/login" replace />    } 
+    if (isLoading){ return (
+            <div className="container">
+             <div className="generalMessage" >Loading...</div>
+            </div>
+            )}
+    if (!isAuthenticated)       {return <Navigate to="/login" replace /> } 
+    if (adminOnly && !isAdmin)  {return <Navigate to="/unauthorized" replace />}
+
     return children
 
 }

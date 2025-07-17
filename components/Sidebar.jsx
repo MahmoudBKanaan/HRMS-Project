@@ -3,20 +3,14 @@ import { useLocation , Link} from "react-router-dom";
 import { MdRequestPage } from 'react-icons/md';
 import "./Sidebar.css";
 import { FiSettings } from 'react-icons/fi';
+import { useContext } from 'react';
+import { AuthContext } from '../src/AuthContext';
 
-
-
-export const Sidebar = () => {
-
-  const location = useLocation();
-
-  return (
-    <aside className="side-bar">
-    <div className="logo">HRMS</div>
+const AdminList = () => {
+return (
     <div className="navListGroup">
     <nav>
     <ul className="navList">
-    
     <li ><Link 
     className={`navItem ${location.pathname === "/dashboard" ? "active" : ""}`} 
     to="/dashboard" ><FaHome /> DashBoard </Link></li>
@@ -27,19 +21,54 @@ export const Sidebar = () => {
       className={`navItem ${location.pathname === "/attendance" ? "active" : ""}`} 
       to="/attendance" ><FaCheckCircle /> Attendance</Link></li>
     <li ><Link 
-       className={`navItem ${location.pathname === "/requests" ? "active" : ""}`} 
-       to="/requests" > <MdRequestPage /> Requests</Link></li>
-    <li ><Link 
       className={`navItem ${location.pathname === "/payroll" ? "active" : ""}`} 
       to="/payroll" ><FaMoneyBillWave /> Payroll </Link></li>
     <li ><Link 
        className={`navItem ${location.pathname === "/documents" ? "active" : ""}`} 
        to="/documents" ><FaFileAlt /> Documents</Link></li>
     <li ><Link 
+       className={`navItem ${location.pathname === "/requests" ? "active" : ""}`} 
+       to="/requests" > <MdRequestPage /> Requests</Link></li>
+    <li ><Link 
        className={`navItem ${location.pathname === "/settings" ? "active" : ""}`} 
        to="/settings" ><FiSettings /> Settings</Link></li>
     </ul>
     </nav>
     </div>
+)}
+
+const UserList = () => {
+  return (
+    <div className="navListGroup">
+    <nav>
+    <ul className="navList">
+    <li ><Link 
+    className={`navItem ${location.pathname === "/dashboard" ? "active" : ""}`} 
+    to="/dashboard" ><FaHome /> DashBoard </Link></li>
+    <li ><Link 
+       className={`navItem ${location.pathname === "/requests" ? "active" : ""}`} 
+       to="/requests" > <MdRequestPage /> Requests</Link></li>
+    <li ><Link 
+       className={`navItem ${location.pathname === "/settings" ? "active" : ""}`} 
+       to="/settings" ><FiSettings /> Settings</Link></li>
+    </ul>
+    </nav>
+    </div>
+  )};
+
+
+
+export const Sidebar = () => {
+
+  const location = useLocation();
+  const {isAdmin} = useContext(AuthContext);
+
+  return (
+    <aside className="side-bar">
+      <img src="/assets/logoWhite.png" className='mainLogo' />
+      {isAdmin?
+      <AdminList /> :
+      < UserList  />
+      }
     </aside>
   )};

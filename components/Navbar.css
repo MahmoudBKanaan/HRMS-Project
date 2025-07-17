@@ -100,5 +100,6 @@ align-items: center;
 color: #dedede;
 width: 30vw;
 height:16vh;
+z-index: 2;
 
 }
