@@ -190,6 +190,7 @@
 .errorMessage {
   background: none;
   color: #dedede;
+  font-size: 0.7vw;
   margin: 0;
   padding: 0;
 }

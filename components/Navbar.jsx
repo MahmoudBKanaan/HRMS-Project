@@ -23,7 +23,9 @@ export const Navbar = ( {navTitle, navText} ) => {
    }
 
    const handlelogOutClick = () => {
+    const encryptedPassword = localStorage.getItem("currentPassword");
     localStorage.clear();
+    localStorage.setItem("currentPassword", encryptedPassword);
     sessionStorage.clear();
     setIsAdmin(false);
     setIsAuthenticated(false);
@@ -34,7 +36,7 @@ export const Navbar = ( {navTitle, navText} ) => {
       setDropDownMenu(true);
       setTimeout( () => {
       setDropDownMenu(false);
-      }, 10000 )
+      }, 1000000 )
    }
    
    return (

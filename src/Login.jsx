@@ -1,21 +1,25 @@
-  import { useContext, useEffect, useState } from 'react'
-  import './Login.css'
-  import { mockLogin } from '../mock-Server/mockLogin';
-  import { useNavigate, Link } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react'
+import './Login.css'
+import { mockLogin } from '../mock-Server/mockLogin';
+import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from './AuthContext';
+import  CryptoJS  from "crypto-js";
 
 
+  export const getSecretKey = () => {
+    const secretKey = "attentionIsTheCurrencyOfLife";
+    return secretKey
+  }
 
 
   function Login() {
-    const [count, setCount] = useState(0)
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [valError, setValError] = useState("");
     const [error , setError] = useState("")
     const [rememberMe , setRememberMe] = useState(false);
     const navigate = useNavigate();
-    const { isAdmin, setIsAdmin , setIsAuthenticated} = useContext(AuthContext)
+    const { setIsAdmin , setIsAuthenticated} = useContext(AuthContext)
 
     const validateInput = () => {
       if      (!email)                                          {  return"Email is required!"}
@@ -36,32 +40,32 @@ import { AuthContext } from './AuthContext';
 
     if(!errorMessage) {
       try { 
-        const res = await mockLogin (email, password)
+        const secretKey = getSecretKey();
+        const res = await mockLogin (email, password, secretKey)
         if (res.success) {     
           setIsAuthenticated(true);
           console.log("Login Successful")
           const token = res.token;
-          if (rememberMe) {
-            localStorage.setItem("token", token);
-          if (res.admin) {
-            setIsAdmin(true)
-            localStorage.setItem("isAdmin","true")
-          } else {
-            setIsAdmin(false)
-            localStorage.setItem("isAdmin","false")
-          }
-
-          }  else {
-            sessionStorage.setItem("token", token);
-          if (res.admin) {
-            setIsAdmin(true)
-            sessionStorage.setItem("isAdmin","true")
-          } else {
-            setIsAdmin(false)
-            sessionStorage.setItem("isAdmin","false")
-          }
-
-          }
+          const encryptedPassword = CryptoJS.AES.encrypt(password, secretKey).toString();
+          localStorage.setItem("currentPassword", encryptedPassword)
+            if (rememberMe) {
+              localStorage.setItem("token", token);       
+            if (res.admin) {
+              setIsAdmin(true)
+              localStorage.setItem("isAdmin","true")
+            } else {
+              setIsAdmin(false)
+              localStorage.setItem("isAdmin","false")
+            }
+            }  else {
+              sessionStorage.setItem("token", token);
+            if (res.admin) {
+              setIsAdmin(true)
+              sessionStorage.setItem("isAdmin","true")
+            } else {
+              setIsAdmin(false)
+              sessionStorage.setItem("isAdmin","false")
+            }}
           navigate("/dashboard");
         }
       } catch (err) {
@@ -112,4 +116,4 @@ import { AuthContext } from './AuthContext';
     );
   }
 
-  export default Login
+  export default Login;

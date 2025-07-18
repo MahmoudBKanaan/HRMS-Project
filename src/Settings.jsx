@@ -1,6 +1,7 @@
 import {Sidebar} from "/components/Sidebar.jsx";
 import { Navbar } from '../components/Navbar';
 import "./Settings.css";
+import { PasswordPopup } from "../components/PasswordPopup.jsx";
 
 const Settings = () => {
     return (
@@ -8,6 +9,7 @@ const Settings = () => {
         <Sidebar />
         <div className="mainContent">
         <Navbar  navTitle="Settings" navText="Manage all settings" />
+        <PasswordPopup />
             
 
 

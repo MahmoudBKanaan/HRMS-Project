@@ -6,7 +6,7 @@
     align-items:center;
     background-Color: #172b3f;
     width: 13vw;
-    Height: 100vh;
+    min-height: 100vh;
     }
     .logo {
     font-family: Roboto, sans-serif;
