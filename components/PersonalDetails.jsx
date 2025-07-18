@@ -15,26 +15,25 @@ export const PersonalDetails = () => {
     <h2 className='PersonalDetailsTitle'>Personal Details</h2>
     <div className="detailsGrid">
 
-    <div className="DetailsGridItem" >
-    <p >Address:</p>
+    <div className="DetailsGridItem" > Address:
     <div className="DetailsGridValue" >{isAdmin?
                     `${admin.address}`:
-                    `${user.address}`}</div>
+                    `${user.address}`}
+    </div>
     </div>
     
-    <div className="DetailsGridItem">
-    <p >Date of Birth:</p>
+    <div className="DetailsGridItem">Date of Birth:
     <div className="DetailsGridValue"> {isAdmin?
                     `${admin.dateOfBirth}`:
                     `${user.dateOfBirth}`}
-                    </div>
+    </div>
     </div>
     
-    <div className="DetailsGridItem">
-    <p >Gender:</p>
+    <div className="DetailsGridItem">Gender:
     <div className="DetailsGridValue" > {isAdmin?
                     `${admin.gender}`:
-                    `${user.gender}`}</div>
+                    `${user.gender}`}
+    </div>
     </div>
     
     </div>

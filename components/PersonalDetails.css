@@ -23,11 +23,12 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    line-height: 0.5vw;
+    line-height: 2.4vw;
     font-size: 1.1vw;
 }
 .DetailsGridItem {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     flex-direction: row;
@@ -44,4 +45,51 @@
     align-items: center;
     justify-content: center;
     font-weight: 300;
+}
+@media (min-width:300px) and (max-width:1000px) and (min-height:600px) and (max-height:1400px)  {
+
+.PersonalDetailsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    transform: translate(0,0);
+    width: 70vw;
+    margin-top: 0.5vh;
+    gap: 1vh;
+}
+.PersonalDetailsTitle {
+    line-height: 3vw;
+    margin: 0.5vw  0 0.5vw 0;
+    font-size: 1.8vh;
+}
+.detailsGrid {
+    width: 70vw;
+    height: 15vh;
+    border-Radius: 1vh;
+    background-color: #172b3f;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    line-height: 3.8vh;
+    font-size: 1.7vh;
+}
+.DetailsGridItem {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding: 0 0 0 2vh ; 
+    letter-spacing: 0.04vh;
+}
+.DetailsGridValue {
+    position: absolute;
+    left:13.5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+}
 }

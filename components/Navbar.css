@@ -98,8 +98,70 @@ display: flex;
 justify-content: center;
 align-items: center;
 color: #dedede;
+font-size: 1.2vw;
 width: 30vw;
 height:16vh;
 z-index: 2;
 
+}
+@media (min-width:300px) and (max-width:1000px) and (min-height:600px) and (max-height:1400px)  {
+.navbar {
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+gap: 11vh;
+justify-content:space-between;
+padding: 0 0 ;
+align-Items: center;
+margin-Bottom:0;
+
+}
+.navbar-title {
+font-size: 3.4vh ;
+margin: 2vh 0 0 2vh;
+}
+.navbar-text {
+font-size: 1.8vh ;
+margin: 1vh 0 1vh 2vh;
+}
+.userMenu {
+border-radius: 3vh;
+}
+.avatar {        
+width: 8vh;
+height: 8vh;
+padding: 2vh;
+}
+.dropdown {
+margin: 0.2vw;
+right: 1.5vh;
+top: 11vh;
+width: 12vh;
+height: 8vh;
+
+}
+.dropdownListItem {
+font-size: 1.6vh;
+display: flex;
+flex-direction: row;
+gap: 0.8vh;
+justify-content: center;
+align-items: center;
+margin:0;
+list-Style: none;
+padding: 0;
+width: 11.5vh;
+height:3.8vh;
+cursor:pointer;
+z-Index: 2;
+}
+.settingMessage {
+top: 45vh;
+left: 10vw;
+border-radius: 1vh;
+box-shadow: 0.005vw 0.005vw 0.9vw #dedede ;
+width: 80vw;
+height:10vh;
+font-size: 1.9vh;
+}
 }
