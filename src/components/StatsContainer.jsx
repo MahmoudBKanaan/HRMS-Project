@@ -1,8 +1,7 @@
 import { FaUsers, FaCheckCircle, FaMoneyBillWave } from 'react-icons/fa';
 import "./StatsContainer.css"
 import { useContext } from 'react';
-import { AuthContext } from '../src/AuthContext';
-import { admin, user } from "../Constants/Data";
+import { AuthContext } from '../AuthContext';
 
 
 
@@ -26,18 +25,18 @@ const StatsCard = ({ icon, label, value, sub }) => (
 
 export const StatsContainer = () => {
 
-  const {isAdmin} = useContext(AuthContext);
+  const {isAdmin, accounts} = useContext(AuthContext);
     return (
           <div className="statsContainer">
           <StatsCard icon={<FaUsers />} label="Department" value= {isAdmin?
-                              `${admin.department}`:
-                              `${user.department}`} />
+                              `${accounts?.admin?.department}`:
+                              `${accounts?.user?.department}`} />
           <StatsCard icon={<FaMoneyBillWave />} label="Payroll" value={isAdmin?
-                              `${admin.salary}`:
-                              `${user.salary}`}  />
+                              `$${accounts?.admin?.payroll?.netPay}`:
+                              `${accounts?.user?.payroll?.netPay}`}  />
           <StatsCard icon={<FaCheckCircle />} label="Attendance" value={isAdmin?
-                              `${admin.attendanceRate}`:
-                              `${user.attendanceRate}`} />
+                              `${accounts?.admin?.attendance}`:
+                              `${accounts?.user?.attendance}`} />
           </div>
     );
 };

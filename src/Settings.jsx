@@ -1,7 +1,7 @@
-import {Sidebar} from "/components/Sidebar.jsx";
-import { Navbar } from '../components/Navbar';
+import {Sidebar} from "/src/components/Sidebar.jsx";
+import { Navbar } from '/src/components/Navbar.jsx';
 import "./Settings.css";
-import { PasswordPopup } from "../components/PasswordPopup.jsx";
+import { PasswordPopup } from "./components/PasswordPopup.jsx";
 
 const Settings = () => {
     return (

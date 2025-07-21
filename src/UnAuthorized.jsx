@@ -1,7 +1,7 @@
 import './UnAuthorized.css';
 import { useEffect , useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Unauthorized } from '../Constants/Data.js';
+
 
 
 const UnAuthorized = () => {
@@ -23,8 +23,8 @@ const UnAuthorized = () => {
                 
                 return (
                 <div className="unAuthorizedMessage">
-                        {message.firstline}
-                <div>   {message.secondline} </div>
+                        You lack the permission to view this page.
+                <div>   You're being directed to the dashboard. </div>
                 </div>
                 )})}
                 

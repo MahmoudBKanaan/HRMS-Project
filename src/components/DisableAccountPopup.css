@@ -1,0 +1,70 @@
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 5,5, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.question-popup-container {
+  background-color: #0d1b2a;
+  color: #ffffff;
+  padding: 1.5vw;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.6vw;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0 0 0.6vw #000;
+  width: 20vw;
+  height: 10vw;
+    z-index: 51;
+}
+
+.question-popup-title {
+  font-size: 2.2vw ;
+  padding: 0 0.5vw;
+  font-weight: 500;
+  color: #dedede;
+  
+}
+
+.question-popup-container p {
+  font-size: 1.2vw;
+  line-height: 1.5vw;
+  text-align: center;
+  color: #dedede;
+  margin-bottom: 25px;
+}
+
+.question-popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.0vw;
+}
+
+.question-popup-buttons button {
+  padding: 0.5vw 1.6vw;
+  border: none;
+  border-radius: 0.3vw;
+  font-size: 1.15vw;
+  cursor: pointer;
+  font-weight: bold;
+  width: 9vw;
+}
+
+.btn-no {
+  background-color: #1e4db7;
+  color: #dedede;
+}
+
+.btn-yes {
+  background-color: #a01143;
+  color: #dedede;
+}
+ 

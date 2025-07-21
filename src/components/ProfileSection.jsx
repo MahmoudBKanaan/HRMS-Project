@@ -1,14 +1,14 @@
 import { useContext, useState } from "react";
 import "./ProfileSection.css";
-import "../src/index.css";
-import { admin, user } from "../Constants/Data";
-import { AuthContext } from "../src/AuthContext";
+import "/src/index.css";
+import { AuthContext } from "../AuthContext";
+
 
 
 export const ProfileSection = () => {
 
 
-  const {isAdmin} = useContext(AuthContext);
+  const {isAdmin, departments, accounts} = useContext(AuthContext);
   const [checkinTime, setCheckinTime] = useState(null);
   const [checkoutTime, setCheckoutTime] = useState(null);
   const [hasCheckedin, setHasCheckedin] = useState(false);
@@ -57,19 +57,20 @@ export const ProfileSection = () => {
 
     return (
           <div className="profileSection">
-            <img src="/assets/profileImage.png" alt="Neo Arel" className="profileImg" />
+            <img src={isAdmin?accounts.admin.ProfileImage:accounts.user.ProfileImage } alt="Profile" className="profileImg" />
+             
               <div className="profileInfo">
                 <div className='ProfileUpperSection' > 
                   <div className='NameRoleWrapper' >
                   <h2 className='EmployeeName' >
                     {isAdmin?
-                    `${admin.firstName} ${admin.middleName} ${admin.lastName}`:
-                    `${user.firstName} ${user.middleName} ${user.lastName}`}
+                    `${accounts.admin.firstName} ${accounts.admin.middleName} ${accounts.admin.lastName}`:
+                    `${accounts.user.firstName} ${accounts.user.middleName} ${accounts.user.lastName}`}
                     </h2>
                   <p className='EmployeeRole'>
                     {isAdmin?
-                    `${admin.role}`:
-                    `${user.role}`}
+                    `${accounts.admin.role}`:
+                    `${accounts.user.role}`}
                   </p>
                   </div>
                   <div className='ButtonsWrapper' >
@@ -83,15 +84,15 @@ export const ProfileSection = () => {
                     <div className='LowerSectionTitle'>Email:
                     <div className='LowerSectionText'> 
                     {isAdmin?
-                    `${admin.email}`:
-                    `${user.email}`}
+                    `${accounts.admin.email}`:
+                    `${accounts.user.email}`}
                     </div>
                     </div>
                     <div className='LowerSectionTitle'>Hire Date:
                     <div className='LowerSectionText'>
                     {isAdmin?
-                    `${admin.hireDate}`:
-                    `${user.hireDate}`}
+                    `${accounts.admin.hireDate}`:
+                    `${accounts.user.hireDate}`}
                     </div>
                     </div>
                     </div>
@@ -100,15 +101,15 @@ export const ProfileSection = () => {
                     <div className='LowerSectionTitle'>Phone:
                     <div className='LowerSectionText'>
                     {isAdmin?
-                    `${admin.phone}`:
-                    `${user.phone}`}
+                    `${accounts.admin.phone}`:
+                    `${accounts.user.phone}`}
                     </div>
                     </div>
                     <div className='LowerSectionTitle'> Employee ID:
                     <div className='LowerSectionText'>
                                {isAdmin?
-                    `${admin.id}`:
-                    `${user.id}`}
+                    `${accounts.admin.id}`:
+                    `${accounts.user.id}`}
                     </div>
                     </div>
                     </div>

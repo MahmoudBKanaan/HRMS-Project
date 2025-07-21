@@ -1,17 +1,19 @@
-import {Sidebar} from "/components/Sidebar"
-import { Navbar } from '/components/Navbar';
-import { ProfileSection } from "/components/ProfileSection";
-import { StatsContainer } from "/components/StatsContainer"
-import {PersonalDetails} from "/components/PersonalDetails"
+import {Sidebar} from "/src/components/Sidebar"
+import { Navbar } from '/src/components/Navbar';
+import { ProfileSection } from "/src/components/ProfileSection";
+import { StatsContainer } from "/src/components/StatsContainer"
+import {PersonalDetails} from "/src/components/PersonalDetails"
 import "./DashBoard.css";
-import { admin, user } from "../Constants/Data";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "./AuthContext";
+
 
 
 const Dashboard = () => {
 
-  const {isAdmin} = useContext(AuthContext);
+  const {isAdmin, accounts} = useContext(AuthContext);
+
+
 
   return (
 
@@ -19,8 +21,8 @@ const Dashboard = () => {
       <Sidebar  />
         <div className="mainContent">
         <Navbar  navTitle="Dashboard" navText={`Welcome Back ${isAdmin? 
-        `${admin.firstName} ${admin.middleName} ${admin.lastName}`: 
-        `${user.firstName} ${user.middleName} ${user.lastName}`
+        `${accounts?.admin?.firstName} ${accounts?.admin?.middleName} ${accounts?.admin?.lastName}`: 
+        `${accounts?.user?.firstName} ${accounts?.user?.middleName} ${accounts?.user?.lastName}`
           } `} />     
         < ProfileSection  />
         < StatsContainer/>

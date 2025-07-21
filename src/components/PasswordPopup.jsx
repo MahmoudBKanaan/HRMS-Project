@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import CryptoJS from 'crypto-js';
 import './PasswordPopup.css';
-import "../src/login.css";
-import { getSecretKey } from '../src/Login';
+import "/src/login.css";
+import { getSecretKey } from '../Login';
 
 export const PasswordPopup = () => {
     

@@ -2,7 +2,7 @@
 import { Routes, Route, Navigate} from 'react-router-dom';
 import RouteProtection from "./RouteProtection.jsx";
 import { AuthContext } from './AuthContext.jsx';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 
 import Login  from './Login.jsx';
 import ForgotPassword  from './ForgotPassword.jsx';
@@ -14,14 +14,27 @@ import Payroll from './Payroll.jsx';
 import Documents from './Documents.jsx';
 import Settings from './Settings.jsx';
 import  UnAuthorized  from './UnAuthorized.jsx';
+import { Departments, accounts } from '../Constants/Data';
 
 
 function App () {
 
   const { isAdmin,isAuthenticated, isLoading} = useContext(AuthContext)
 
+
+
+
+  useEffect(() => {
+    if(!localStorage.getItem('departments')) {
+      localStorage.setItem("departments", JSON.stringify(Departments))
+    }
+    if(!localStorage.getItem('accounts')) {
+      localStorage.setItem("accounts", JSON.stringify(accounts))
+    }
+  },[])
+
   if (isLoading) {
-    return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '10vh', fontFamily: 'Roboto'}} >Loading...</div>
+    return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '2vw', letterSpacing:'0.2vw' , height: '100vh', width: '100vw' ,  fontFamily: 'Roboto'}} >Loading...</div>
   }
   
   return ( 

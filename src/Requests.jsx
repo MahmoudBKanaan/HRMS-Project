@@ -1,5 +1,5 @@
-import {Sidebar} from "/components/Sidebar.jsx"
-import { Navbar } from '../components/Navbar';
+import {Sidebar} from "/src/components/Sidebar.jsx"
+import { Navbar } from '/src/components/Navbar';
 
 const Requests = () => {
     return (

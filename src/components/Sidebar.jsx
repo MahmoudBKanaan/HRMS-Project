@@ -4,7 +4,7 @@ import { MdRequestPage } from 'react-icons/md';
 import "./Sidebar.css";
 import { FiSettings } from 'react-icons/fi';
 import { useContext } from 'react';
-import { AuthContext } from '../src/AuthContext';
+import { AuthContext } from '/src/AuthContext';
 
 const AdminList = () => {
 return (

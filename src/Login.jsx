@@ -72,9 +72,7 @@ import  CryptoJS  from "crypto-js";
         setError(err.message);
       }}}
       
-/*       useEffect( () => {
-        console.log('Admin State has changed:'+isAdmin)
-      }, [isAdmin]) */
+
       
 
   return (
