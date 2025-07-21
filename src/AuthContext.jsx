@@ -15,7 +15,9 @@ export const AuthProvider = ({ children }) => {
     const [addUser, setAddUser] = useState(false)
     const [departments, setDepartments] = useState({})
     const [accounts, setAccounts] = useState({})
-    
+    const [currentdepartment, setCurrentDepartment]   = useState(null);
+    const [userIndex, setUserIndex] = useState(null);
+    const [editingPage, setEditingPage]               = useState(false);
 
     
     
@@ -65,8 +67,11 @@ export const AuthProvider = ({ children }) => {
                 isLoading, setIsLoading, 
                 isAdmin, setIsAdmin, 
                 addUser , setAddUser,
-            accounts, setAccounts,
-            departments, setDepartments
+                accounts, setAccounts,
+                departments, setDepartments,
+                currentdepartment,setCurrentDepartment,
+                userIndex,setUserIndex,
+                editingPage,setEditingPage,
         }} >
             {children}
 

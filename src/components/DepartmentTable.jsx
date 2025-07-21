@@ -12,19 +12,19 @@ import ActivateAccountPopup from "./ActivateAccountPopup.jsx";
 
 const DepartmentTable = ({ department, users }) => {
 
+const {setAddUser, setCurrentDepartment, setUserIndex, setEditingPage} = useContext(AuthContext);
+
 const [menuIndex, setMenuIndex] = useState(null);
 const [disableAccountPopup, setDisableAccountPopup] = useState(false);
 const [activateAccountPopup, setActivateAccountPopup] = useState(false);
 
-const [currentdepartment, setCurrentDepartment]   = useState(null);
-const [viewDetail, setViewDetail]                 = useState(false);
-const [editingPage, setEditingPage]               = useState(false);
-const [downloadResume, setDownloadResume]         = useState(false);
 
-const {addUser, setAddUser} = useContext(AuthContext);
+const [viewDetail, setViewDetail]                 = useState(false);
+
 
 
 useEffect(() => {
+  setUserIndex(menuIndex)
   if(menuIndex !== null) {
       setTimeout(() => {
       setMenuIndex(null);
@@ -37,7 +37,6 @@ return (
     <div onClick={() => handleEditButton()} >Edit</div>
     <div onClick={() => handleDisableAccountButton()} >Disable Account</div>
     <div onClick={() => handleActivateAccountButton()} >Activate Account</div>
-    <div onClick={() => handleDownloadResumeButton()} >Download Resume</div>
   </div>
 );
 };
@@ -47,6 +46,7 @@ return (
         setViewDetail(true);
     }
     const handleEditButton = () => {
+        setCurrentDepartment(department);
         setEditingPage(true);
     }
     const handleActivateAccountButton = () => {
@@ -55,20 +55,14 @@ return (
     const handleDisableAccountButton = () => {
         setDisableAccountPopup(true);
     }
-    const handleDownloadResumeButton = () => {
-        setDownloadResume(true);
-    }
 
 
 
 
-  const handleAddUserButton = (dept) => {
+  const handleAddUserButton = () => {
   setAddUser(true);
-  setCurrentDepartment(dept);
+  setCurrentDepartment(department);
 }
-
-
-
 
 
 
@@ -76,7 +70,7 @@ return (
     return (
       <>
     <div className="department">
-    <button onClick={() => handleAddUserButton(department)} className="add-user">Add User</button>
+    <button onClick={() => handleAddUserButton()} className="add-user">Add User</button>
       <h2>{department}</h2>
       <table>
         <thead>
