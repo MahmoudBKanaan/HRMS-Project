@@ -1,5 +1,5 @@
-import adminImage from "../assets/adminImage.png" 
-import userImage from "../assets/userImage.png" 
+import adminImage     from "../assets/adminImage.png" 
+import userImage      from "../assets/userImage.png" 
 import profileImage01 from "../assets/profileImage01.png" 
 import profileImage02 from "../assets/profileImage02.png" 
 import profileImage03 from "../assets/profileImage03.png" 
@@ -29,7 +29,7 @@ export const accounts =  {
   {
     id: "45467",
     accountType: "admin" ,
-    ProfileImage: adminImage,
+    profileImage: adminImage,
     firstName: "Neo",
     lastName: "Arel",
     middleName: "B.",
@@ -106,7 +106,7 @@ export const accounts =  {
   {
     id: "47854",
     accountType: "user" ,
-    ProfileImage: userImage,
+    profileImage: userImage,
     firstName: "Diana",
     lastName: "Harris",
     middleName: "S.",
@@ -510,7 +510,7 @@ export const Departments = {
   {
     id: "30688",
     accountType: "admin",
-    ProfileImage: profileImage05,
+    profileImage: profileImage05,
     name: "Sarah A. Keen",
     status: "active",
     firstName: "Sarah",
@@ -589,7 +589,7 @@ export const Departments = {
   {
     id: "30971",
     accountType: "user",
-    ProfileImage: profileImage14,
+    profileImage: profileImage14,
     name: "Liam T. Read",
     status: "active",
     firstName: "Liam",
@@ -668,7 +668,7 @@ export const Departments = {
   {
     id: "30124",
     accountType: "user",
-    ProfileImage: profileImage06,
+    profileImage: profileImage06,
     name: "Ella N. Brooks",
     status: "active",
     firstName: "Ella",
@@ -747,7 +747,7 @@ export const Departments = {
   {
     id: "30543",
     accountType: "user",
-    ProfileImage: profileImage07,
+    profileImage: profileImage07,
     name: "Noah C. West",
     status: "inactive",
     firstName: "Noah",
@@ -821,7 +821,7 @@ export const Departments = {
   {
     id: "40995",
     accountType: "admin",
-    ProfileImage: profileImage08,
+    profileImage: profileImage08,
     name: "Olivia R. Stone",
     status: "active",
     firstName: "Olivia",
@@ -900,7 +900,7 @@ export const Departments = {
   {
     id: "40318",
     accountType: "user",
-    ProfileImage: profileImage15,
+    profileImage: profileImage15,
     name: "James L. Park",
     status: "active",
     firstName: "James",
@@ -979,7 +979,7 @@ export const Departments = {
   {
     id: "40746",
     accountType: "user",
-    ProfileImage: profileImage09,
+    profileImage: profileImage09,
     name: "Sophia N. Lane",
     status: "active",
     firstName: "Sophia",
@@ -1058,7 +1058,7 @@ export const Departments = {
   {
     id: "40210",
     accountType: "user",
-    ProfileImage: profileImage16,
+    profileImage: profileImage16,
     name: "Ethan W. Miles",
     status: "disabled",
     firstName: "Ethan",
@@ -1132,7 +1132,7 @@ export const Departments = {
   {
     id: "50677",
     accountType: "admin",
-    ProfileImage: profileImage17,
+    profileImage: profileImage17,
     name: "Ava L. Green",
     status: "active",
     firstName: "Ava",
@@ -1211,7 +1211,7 @@ export const Departments = {
   {
     id: "50488",
     accountType: "user",
-    ProfileImage: profileImage20,
+    profileImage: profileImage20,
     name: "Lucas D. Bell",
     status: "active",
     firstName: "Lucas",
@@ -1290,7 +1290,7 @@ export const Departments = {
   {
     id: "50923",
     accountType: "user",
-    ProfileImage: profileImage20,
+    profileImage: profileImage10,
     name: "Mia S. Ford",
     status: "active",
     firstName: "Mia",
@@ -1369,7 +1369,7 @@ export const Departments = {
   {
     id: "50136",
     accountType: "user",
-    ProfileImage: profileImage19,
+    profileImage: profileImage19,
     name: "Logan P. Hill",
     status: "inactive",
     firstName: "Logan",

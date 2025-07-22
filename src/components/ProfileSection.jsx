@@ -8,11 +8,13 @@ import { AuthContext } from "../AuthContext";
 export const ProfileSection = () => {
 
 
-  const {isAdmin, departments, accounts} = useContext(AuthContext);
+  const {isAdmin, departments, accounts, currentUser} = useContext(AuthContext);
   const [checkinTime, setCheckinTime] = useState(null);
   const [checkoutTime, setCheckoutTime] = useState(null);
   const [hasCheckedin, setHasCheckedin] = useState(false);
   const [checkMessage, setCheckMessage] = useState("");
+
+  console.log(currentUser)
   
 
 
@@ -57,7 +59,7 @@ export const ProfileSection = () => {
 
     return (
           <div className="profileSection">
-            <img src={isAdmin?accounts.admin.ProfileImage:accounts.user.ProfileImage } alt="Profile" className="profileImg" />
+            <img src={isAdmin?accounts.admin.profileImage:accounts.user.profileImage } alt="Profile" className="profileImg" />
              
               <div className="profileInfo">
                 <div className='ProfileUpperSection' > 

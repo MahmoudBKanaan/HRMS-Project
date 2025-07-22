@@ -26,7 +26,7 @@ const Dashboard = () => {
           } `} />     
         < ProfileSection  />
         < StatsContainer/>
-        <PersonalDetails address="28th St, Dammam KSA" />
+        <PersonalDetails />
         </div>
     </div>
   

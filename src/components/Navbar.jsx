@@ -63,7 +63,7 @@ export const Navbar = ( {navTitle, navText} ) => {
       <p className="navbar-text" >{navText}</p>
     </div>
     <div className="userMenu" onClick={() => showDropDownMenu()} >
-      <img src={isAdmin?accounts.admin.ProfileImage:accounts.user.ProfileImage } alt="Profile" className="avatar" />
+      <img src={isAdmin?accounts.admin.profileImage:accounts.user.profileImage } alt="Profile" className="avatar" />
     </div> 
     </header>
 

@@ -9,19 +9,22 @@ export const AuthContext = createContext(false);
 
 export const AuthProvider = ({ children }) => {
 
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [isAdmin, setIsAdmin] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
-    const [addUser, setAddUser] = useState(false)
-    const [departments, setDepartments] = useState({})
-    const [accounts, setAccounts] = useState({})
-    const [currentdepartment, setCurrentDepartment]   = useState(null);
-    const [userIndex, setUserIndex] = useState(null);
-    const [editingPage, setEditingPage]               = useState(false);
+    const [isAuthenticated, setIsAuthenticated]     = useState(false);
+    const [isAdmin, setIsAdmin]                     = useState(false);
+    const [isLoading, setIsLoading]                 = useState(true);
+    const [addUser, setAddUser]                     = useState(false)
+    const [departments, setDepartments]             = useState({})
+    const [accounts, setAccounts]                   = useState({})
+    const [currentDepartment, setCurrentDepartment] = useState(null);
+    const [userIndex, setUserIndex]                 = useState(null);
+    const [editingPage, setEditingPage]             = useState(false);
+    const [viewDetailsPage, setViewDetailsPage]     = useState(false);
+    const [currentUser, setCurrentUser]             = useState(null)
+    
 
     
-    
-    
+
+
     const getStoredToken = () => {
         return localStorage.getItem("token") || sessionStorage.getItem("token");}
         
@@ -69,9 +72,11 @@ export const AuthProvider = ({ children }) => {
                 addUser , setAddUser,
                 accounts, setAccounts,
                 departments, setDepartments,
-                currentdepartment,setCurrentDepartment,
-                userIndex,setUserIndex,
-                editingPage,setEditingPage,
+                currentDepartment,setCurrentDepartment,
+                userIndex, setUserIndex,
+                editingPage, setEditingPage,
+                viewDetailsPage, setViewDetailsPage,
+                currentUser, setCurrentUser,
         }} >
             {children}
 

@@ -8,18 +8,19 @@ import "./AddUser.css"
 
 const EditingPage = () => {
     
-    const {setAddUser, departments, setDepartments, currentdepartment,userIndex , setEditingPage} = useContext(AuthContext);
-    /* console.log(currentdepartment) */
+    const {departments, setDepartments, currentDepartment,userIndex , setEditingPage} = useContext(AuthContext);
+    /* console.log(currentDepartment) */
     const [selectedImage, setSelectedImage] = useState(null)
+    const [tempIndex, setTempIndex] = useState(userIndex)
+
     const [formData, setFormData] = useState(() => {
-        const user = departments[currentdepartment][userIndex];
-        console.log(user.department)
-        setSelectedImage(user.ProfileImage)
+        const user = departments[currentDepartment][tempIndex];
+        setSelectedImage(user.profileImage)
         return {
             firstName: user.firstName || "",
             lastName: user.lastName || "",
             id: user.id || "",
-            ProfileImage: user.ProfileImage || "",
+            profileImage: user.profileImage || "",
             middleName: user.middleName || "",
             email: user.email || "",
             phone: user.phone || "",
@@ -60,7 +61,7 @@ const EditingPage = () => {
         lastName: formData.lastName,
         middleName: formData.middleName,
         id: formData.id,
-        ProfileImage: formData.ProfileImage,
+        profileImage: formData.profileImage,
         email: formData.email,
         phone: formData.phone,
         address: formData.address,
@@ -92,10 +93,10 @@ const EditingPage = () => {
     
   
     setDepartments((departments) => {
-        const updatedDept = [...departments[currentdepartment]]
-        updatedDept[userIndex] =  newUser
+        const updatedDept = [...departments[currentDepartment]]
+        updatedDept[tempIndex] =  newUser
         return {
-        ...departments, [dept]: updatedDept
+        ...departments, [currentDepartment]: updatedDept
         };
 
 
@@ -131,7 +132,7 @@ const handleImageChange = (event) => {
     if (file) {
       setSelectedImage(URL.createObjectURL(file));
       setFormData((prev) => ({
-        ...prev, ProfileImage: URL.createObjectURL(file)
+        ...prev, profileImage: URL.createObjectURL(file)
       }))
     }
 };
@@ -212,7 +213,7 @@ return (
 
         <div className="sub-section">
           <label htmlFor="department">Department:</label>
-          <select required id="department" name="department" onChange={handleChange} value={currentdepartment} >
+          <select required id="department" name="department" onChange={handleChange} value={currentDepartment} >
             { Object.entries(departments).map(([dept, users]) => (
               
               <option  key={dept} >{dept}</option>
@@ -223,7 +224,7 @@ return (
         <div className="ImageWrapper">
         <div className="imageButton">
         <label required htmlFor="profileImage">Upload Profile Image 📁</label>
-        <input className="imageInputField" type="file" id="profileImage" name="ProfileImage"
+        <input className="imageInputField" type="file" id="profileImage" name="profileImage"
         accept="image/*" onChange={(e) => handleImageChange(e)} />
         </div>
         {selectedImage && (

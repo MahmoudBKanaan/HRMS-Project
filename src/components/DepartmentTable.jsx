@@ -3,6 +3,7 @@ import "./DepartmentTable.css"
 import { AuthContext } from "../AuthContext.jsx";
 import DisableAccountPopup from "./DisableAccountPopup.jsx";
 import ActivateAccountPopup from "./ActivateAccountPopup.jsx";
+import { Departments } from "../../Constants/Data.js";
 
 
 
@@ -12,14 +13,16 @@ import ActivateAccountPopup from "./ActivateAccountPopup.jsx";
 
 const DepartmentTable = ({ department, users }) => {
 
-const {setAddUser, setCurrentDepartment, setUserIndex, setEditingPage} = useContext(AuthContext);
+  
+  const [menuIndex, setMenuIndex] = useState(null);
+  const [disableAccountPopup, setDisableAccountPopup] = useState(false);
+  const [activateAccountPopup, setActivateAccountPopup] = useState(false);
+  
+  const {setAddUser, setCurrentDepartment, setUserIndex, userIndex,
+    setEditingPage, setViewDetailsPage, setCurrentUser,
+    currentUser, currentDepartment} = useContext(AuthContext);
 
-const [menuIndex, setMenuIndex] = useState(null);
-const [disableAccountPopup, setDisableAccountPopup] = useState(false);
-const [activateAccountPopup, setActivateAccountPopup] = useState(false);
 
-
-const [viewDetail, setViewDetail]                 = useState(false);
 
 
 
@@ -28,7 +31,7 @@ useEffect(() => {
   if(menuIndex !== null) {
       setTimeout(() => {
       setMenuIndex(null);
-      }, 5000);}},[menuIndex])
+      }, 10000);}},[menuIndex])
 
 const DropdownMenu = ({ visible }) => {
 return (
@@ -41,9 +44,10 @@ return (
 );
 };
 
-
     const handleViewDetailButton  = () => {
-        setViewDetail(true);
+      setCurrentDepartment(department);
+      setCurrentUser(() => Departments[department][userIndex])
+      setViewDetailsPage(true);
     }
     const handleEditButton = () => {
         setCurrentDepartment(department);
@@ -88,7 +92,7 @@ return (
           {users.map((user, idx) => (
             <tr key={idx}>
               <td>{user.id}</td>
-              <td>{user.name}</td>
+              <td>{user.firstName} {user.middleName} {user.lastName}</td>
               <td>{user.role}</td>
               <td>{user.status}</td>
               <td>{user.attendance}</td>
