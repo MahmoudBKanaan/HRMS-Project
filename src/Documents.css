@@ -14,3 +14,8 @@ top:0%;
 width: 87vw;
 flex: 1;
 }
+
+@media (min-width:200px) and (max-width:800px){
+  .DocumentsContainer {
+    display: none;
+}}

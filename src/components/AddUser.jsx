@@ -17,7 +17,7 @@ const AddUser = () => {
     const newUser = {
       id: formData.employeeId,
       accountType: 'user',
-      ProfileImage: selectedImage,
+      profileImage: selectedImage,
       name: `${formData.firstName} ${formData.middleName} ${formData.lastName}`,
       status: 'active',
       firstName: formData.firstName,

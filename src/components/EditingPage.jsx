@@ -1,7 +1,7 @@
 import { AuthContext } from "../AuthContext";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./AddUser.css"
-
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -12,10 +12,10 @@ const EditingPage = () => {
     /* console.log(currentDepartment) */
     const [selectedImage, setSelectedImage] = useState(null)
     const [tempIndex, setTempIndex] = useState(userIndex)
+    const user = departments[currentDepartment][tempIndex];
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState(() => {
-        const user = departments[currentDepartment][tempIndex];
-        setSelectedImage(user.profileImage)
         return {
             firstName: user.firstName || "",
             lastName: user.lastName || "",
@@ -130,17 +130,50 @@ const handleChange = (e) => {
 const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setSelectedImage(URL.createObjectURL(file));
-      setFormData((prev) => ({
-        ...prev, profileImage: URL.createObjectURL(file)
-      }))
+      const reader = new FileReader();
+      
+      
+      reader.onloadend = () => {
+        try {
+          const file = reader.result;
+          localStorage.setItem(`${user.id}UserImage`, file)
+          setSelectedImage(file);
+          setFormData((prev) => ({
+            ...prev, profileImage: file
+          }))
+          
+        } catch (err) {
+          consloe.err(err)
+          navigate("/dashboard");
+        }
+        
+      }
+      reader.onerror = (error) => {
+        console.err(error)
+        navigate("/dashboard");
+      }
+      
+      reader.readAsDataURL(file)
     }
+
+
 };
  
   const cancelForm = () => {
       setEditingPage(false)
   }
 
+  useEffect ( () => {
+    const imageFile  = localStorage.getItem(`${user.id}UserImage`)
+    if (imageFile) {
+      setSelectedImage(imageFile);
+      setFormData((prev) => ({
+          ...prev, profileImage: imageFile
+        }))
+    } else {
+      setSelectedImage(user.profileImage)
+    }
+  }, [])
 
 
 return (

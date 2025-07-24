@@ -172,18 +172,7 @@
   color: #dedede;
 }
 
-@media screen and (max-width: 768px) {
-  .input-field {
-    flex: 1 1 100%;
-  }
-
-  .form-section h3 {
-    font-size: 4vw;
-  }
-
-  .cancel-btn,
-  .create-btn {
-    font-size: 3.5vw;
-    padding: 2vw 4vw;
-  }
-}
+@media (min-width:300px) and (max-width:800px){
+  .form-container {
+    display: none;
+}}

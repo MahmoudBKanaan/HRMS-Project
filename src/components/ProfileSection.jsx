@@ -14,7 +14,6 @@ export const ProfileSection = () => {
   const [hasCheckedin, setHasCheckedin] = useState(false);
   const [checkMessage, setCheckMessage] = useState("");
 
-  console.log(currentUser)
   
 
 

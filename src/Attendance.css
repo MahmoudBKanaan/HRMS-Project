@@ -8,9 +8,101 @@ background-Color: #0d1b2b;
 color: #dedede;
 Height: 100vh;
 width: 100vw;
+
 }
 .mainContent {
 top:0%;
 width: 87vw;
 flex: 1;
+
 }
+.cardsContainer {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+transform: translate(6.5vw,0);
+letter-spacing: 0.002vw;
+width: 70vw;
+gap: 1vw;
+margin: 2vw 0 0vw 0;
+}
+.cardContainer {
+background-Color: #172b3f;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+margin: 0;
+padding: 0;
+gap: 0;
+border-Radius: 0.5vw;
+flex: 1;
+}
+.iconWrapper2 {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+font-Size: 1.8vw;
+font-weight: 500;
+letter-spacing: 0.1vw;
+line-height: 1vw;
+gap: 1.4vw;
+padding: 1.5vw;
+}
+.cardIcon2 {
+font-size: 2.9vw;
+line-height: 0vw;
+padding: 0;
+margin: 0;
+}
+.cardLabel2 {
+padding: 0 0 0vw 1.5vw;
+line-height: 0vw;
+font-size: 1.7vw;
+transform: translate(0 , -1.0vw);
+}
+.tablesSection {
+  height: 55vh;
+  overflow-y: scroll; 
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+
+}
+.tableSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 70vw;
+  margin:0 0 0 6.5vw;
+  gap: 0vw;
+}
+.tableSectionTitle {
+  font-size: 1.8vw;
+  letter-spacing: 0.1vw;
+  padding: 1.5vw 1vw 1vw 0 ;
+  font-weight: 500;
+}
+.attendanceTable th {
+  font-size: 1vw;
+  padding: 0.7vw ;
+  background-color: #091521;
+    color: #dedede;
+  font-weight: 400;
+}
+.attendanceTable td {
+  font-size: 0.9vw;
+  padding: 0.4vw 0.4vw 0.4vw 0.7vw ;
+  background-color: #172b3f;
+  color: #dedede;
+  font-weight: 300;
+  border-bottom: 0.08vw solid #0d1b2b;
+}
+
+
+@media (min-width:200px) and (max-width:800px){
+  .AttendanceContainer {
+    display: none;
+}}

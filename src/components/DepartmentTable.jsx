@@ -1,9 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import "./DepartmentTable.css"
 import { AuthContext } from "../AuthContext.jsx";
-import DisableAccountPopup from "./DisableAccountPopup.jsx";
-import ActivateAccountPopup from "./ActivateAccountPopup.jsx";
-import { Departments } from "../../Constants/Data.js";
+import Popup from "./Popup.jsx";
 
 
 
@@ -17,57 +15,103 @@ const DepartmentTable = ({ department, users }) => {
   const [menuIndex, setMenuIndex] = useState(null);
   const [disableAccountPopup, setDisableAccountPopup] = useState(false);
   const [activateAccountPopup, setActivateAccountPopup] = useState(false);
+  const [isMobile, SetIsMobile] = useState(false);
   
-  const {setAddUser, setCurrentDepartment, setUserIndex, userIndex,
-    setEditingPage, setViewDetailsPage, setCurrentUser,
-    currentUser, currentDepartment} = useContext(AuthContext);
+  const {setAddUser, setCurrentDepartment, setUserIndex,
+          userIndex, setEditingPage, setViewDetailsPage,
+          setCurrentUser, departments,setDepartments,} = useContext(AuthContext);
 
 
 
 
 
 useEffect(() => {
-  setUserIndex(menuIndex)
   if(menuIndex !== null) {
       setTimeout(() => {
       setMenuIndex(null);
       }, 10000);}},[menuIndex])
 
+
+
 const DropdownMenu = ({ visible }) => {
 return (
   <div className={`actionDropdown ${visible ? "show" : ""}`}>
-    <div onClick={() => handleViewDetailButton()} >View Details</div>
-    <div onClick={() => handleEditButton()} >Edit</div>
-    <div onClick={() => handleDisableAccountButton()} >Disable Account</div>
-    <div onClick={() => handleActivateAccountButton()} >Activate Account</div>
+    <div onClick={() => {
+      handleViewDetailButton();
+      setUserIndex(menuIndex);
+    }
+    } >View Details</div>
+    <div onClick={() => {
+      setUserIndex(menuIndex);
+      handleEditButton();
+    }
+    } >Edit</div>
+    <div onClick={() => {
+      setUserIndex(menuIndex);
+      setDisableAccountPopup(true);
+    }
+    } >Disable Account</div>
+    <div onClick={() => {
+      setUserIndex(menuIndex);
+      setActivateAccountPopup(true);
+    }
+    } >Activate Account</div>
   </div>
 );
 };
 
     const handleViewDetailButton  = () => {
-      setCurrentDepartment(department);
-      setCurrentUser(() => Departments[department][userIndex])
-      setViewDetailsPage(true);
+      if (userIndex !== null && userIndex !== undefined) {
+        setCurrentDepartment(department);
+        setCurrentUser(() => departments[department][userIndex])
+        setViewDetailsPage(true);
+      } else {
+        handleViewDetailButton()
+      }
     }
     const handleEditButton = () => {
-        setCurrentDepartment(department);
-        setEditingPage(true);
+            if (userIndex !== null && userIndex !== undefined) {
+              setCurrentDepartment(department);
+              setEditingPage(true);
+
+      } else {
+        handleViewDetailButton()
+      }
     }
-    const handleActivateAccountButton = () => {
-        setActivateAccountPopup(true);
+
+    const handleAddUserButton = () => {
+            if (userIndex !== null && userIndex !== undefined) {
+              setCurrentDepartment(department);
+              setAddUser(true);
+
+      } else {
+        handleAddUserButton()
+      }
     }
-    const handleDisableAccountButton = () => {
-        setDisableAccountPopup(true);
+ 
+    const confirmDisableAccount = () => {
+      const updatedusers = [...users]
+      updatedusers[menuIndex] = {
+        ...updatedusers[menuIndex],
+        status: "Disabled"
+      };
+      setDepartments(prev => ({
+        ...prev, [department]: updatedusers
+      }))
+      setPopup(false)
     }
 
-
-
-
-  const handleAddUserButton = () => {
-  setAddUser(true);
-  setCurrentDepartment(department);
-}
-
+    const confirmActivateAccount = () => {
+      const updatedusers = [...users]
+        updatedusers[menuIndex] = {
+          ...updatedusers[menuIndex],
+          status: "Active"
+        };
+      setDepartments(prev => ({
+        ...prev, [department]: updatedusers
+      }))
+      setActivateAccountPopup(false)
+    }
 
 
 
@@ -103,16 +147,20 @@ return (
                     <div className="menu-icon">☰</div>
                     {menuIndex === idx && <DropdownMenu visible={true} />}
                   </div>
-                    {disableAccountPopup === true && < DisableAccountPopup
-                     department={department} 
-                     setDisableAccountPopup={setDisableAccountPopup} 
-                     menuIndex={menuIndex} 
-                     users={users}/>}
-                    {activateAccountPopup === true && < ActivateAccountPopup
-                     department={department} 
-                     setActivateAccountPopup={setActivateAccountPopup} 
-                     menuIndex={menuIndex} 
-                     users={users}/>}
+                     { disableAccountPopup === true && userIndex !== null && userIndex !== undefined &&
+                     <Popup 
+                     title="Disable Account" 
+                     message="Are you sure you want to disable the account?"
+                     confirmationFunction={() => confirmDisableAccount()} 
+                     cancellationFunction={() => setDisableAccountPopup(false)}
+                     />}
+                     { activateAccountPopup === true && userIndex !== null && userIndex !== undefined &&
+                     <Popup 
+                     title="Acivate Account" 
+                     message="Are you sure you want to activate the account?"
+                     confirmationFunction={() => confirmActivateAccount()} 
+                     cancellationFunction={() => setActivateAccountPopup(false)}
+                     />}
                 </div>
               </td>
             </tr>

@@ -15,3 +15,7 @@ width: 100%;
 flex: 1;
 }
 
+@media (min-width:300px) and (max-width:800px){
+  .EmployeesContainer {
+    display: none;
+}}

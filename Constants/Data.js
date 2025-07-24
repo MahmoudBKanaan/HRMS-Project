@@ -22,6 +22,9 @@ import profileImage19 from "../assets/profileImage19.png"
 import profileImage20 from "../assets/profileImage20.png" 
 
 
+
+
+
 export const accounts =  {
 
   "admin": 
@@ -43,6 +46,7 @@ export const accounts =  {
     role: "Software Engineer",
     employmentStatus: "Active",
     attendance: "99.2%",
+
     payroll: {
         baseSalary: 5000,
         housingBenefits: 1000,
@@ -51,8 +55,6 @@ export const accounts =  {
         commissions: 1500,
         deductions: 1000,
         netPay: 7300,
-        paymentStatus: "Paid",
-        paymentDate: "2025-12-15"
       },
     documents: [
       {
@@ -128,8 +130,6 @@ export const accounts =  {
         commissions: 1500,
         deductions: 1000,
         netPay: 7300,
-        paymentStatus: "Paid",
-        paymentDate: "2025-12-15"
       },
         documents: [
       {
@@ -203,6 +203,9 @@ export const Departments = {
       role: "DevOps Engineer",
       employmentStatus: "Active",
       attendance: "97.8%",
+      checkedin: null, checkedout: null,
+      payments:   { paymentId: "7703", value: 5567, dueDate: "2025-07-16", issueDate: "2025-07-29", status: "Pending" },
+
       payroll: {
         baseSalary: 6500,
         housingBenefits: 1400,
@@ -211,8 +214,7 @@ export const Departments = {
         commissions: 0,
         deductions: 900,
         netPay: 8300,
-        paymentStatus: "Paid",
-        paymentDate: "2025-07-15"
+
       },
       documents: ["ID", "Contract", "Certifications"],
       documentsDetails: [
@@ -229,9 +231,9 @@ export const Departments = {
       id: "11013",
       accountType: "user",
       profileImage: profileImage11,
-      name: "Fahad A. Thompson",
+      name: "Sam A. Thompson",
       status: "active",
-      firstName: "Fahad",
+      firstName: "Sam",
       middleName: "A.",
       lastName: "Thompson",
       email: "fahad.a.thompson@company.com",
@@ -244,6 +246,9 @@ export const Departments = {
       role: "Front-End Developer",
       employmentStatus: "Active",
       attendance: "92.5%",
+       checkedin: null, checkedout:null ,
+       payments:     { paymentId: "4628", value: 6289, dueDate: "2025-09-28", issueDate: "2025-07-19", status: "Pending" },
+
       payroll: {
         baseSalary: 4800,
         housingBenefits: 1100,
@@ -252,8 +257,6 @@ export const Departments = {
         commissions: 0,
         deductions: 650,
         netPay: 6650,
-        paymentStatus: "Paid",
-        paymentDate: "2025-07-15"
       },
       documents: ["ID", "Contract"],
       documentsDetails: [
@@ -284,6 +287,10 @@ export const Departments = {
       role: "QA Automation Engineer",
       employmentStatus: "Active",
       attendance: "95.0%",
+checkedin: "07:42", checkedout: null,
+payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate: "2025-06-30", status: "Pending" },
+
+
       payroll: {
         baseSalary: 5200,
         housingBenefits: 1200,
@@ -292,8 +299,6 @@ export const Departments = {
         commissions: 0,
         deductions: 700,
         netPay: 7350,
-        paymentStatus: "Paid",
-        paymentDate: "2025-07-15"
       },
       documents: ["ID", "Contract", "Report Samples"],
       documentsDetails: [
@@ -309,12 +314,12 @@ export const Departments = {
       id: "11015",
       accountType: "user",
       profileImage: profileImage12,
-      name: "Omar K. Foster",
+      name: "Jade K. Foster",
       status: "disabled",
-      firstName: "Omar",
+      firstName: "Jade",
       middleName: "K.",
       lastName: "Foster",
-      email: "omar.k.foster@company.com",
+      email: "Jade.k.foster@company.com",
       phone: "+1-213-555-0168",
       address: "789 Sunset Blvd, Los Angeles, CA, USA",
       dateOfBirth: "1987-08-30",
@@ -324,6 +329,9 @@ export const Departments = {
       role: "Network Administrator",
       employmentStatus: "Disabled",
       attendance: "68.4%",
+      checkedin: null, checkedout: null,
+      payments:     { paymentId: "4547", value: 9374, dueDate: "2025-07-30", issueDate: "2025-06-08", status: "Pending" },
+
       payroll: {
         baseSalary: 5600,
         housingBenefits: 1300,
@@ -332,8 +340,6 @@ export const Departments = {
         commissions: 0,
         deductions: 1100,
         netPay: 7050,
-        paymentStatus: "Paid",
-        paymentDate: "2025-07-15"
       },
       documents: ["ID", "Contract"],
       documentsDetails: [
@@ -367,6 +373,9 @@ export const Departments = {
       role: "Sales Manager",
       employmentStatus: "Active",
       attendance: "94.6%",
+      checkedin: "06:58", checkedout: null,
+      payments:     { paymentId: "9309", value: 3421, dueDate: "2025-08-23", issueDate: "2025-07-14", status: "Pending" },
+
       payroll: {
         baseSalary: 7000,
         housingBenefits: 1500,
@@ -375,8 +384,6 @@ export const Departments = {
         commissions: 2500,
         deductions: 1000,
         netPay: 11250,
-        paymentStatus: "Paid",
-        paymentDate: "2025-07-15"
       },
       documents: ["ID", "Contract", "Sales Report"],
       documentsDetails: [
@@ -392,12 +399,12 @@ export const Departments = {
       id: "21012",
       accountType: "user",
       profileImage: profileImage18,
-      name: "Majed F. Parker",
+      name: "John F. Parker",
       status: "active",
-      firstName: "Majed",
+      firstName: "John",
       middleName: "F.",
       lastName: "Parker",
-      email: "majed.f.parker@company.com",
+      email: "John.f.parker@company.com",
       phone: "+1-312-555-0145",
       address: "600 W Madison St, Chicago, IL, USA",
       dateOfBirth: "1992-04-14",
@@ -407,6 +414,9 @@ export const Departments = {
       role: "Account Executive",
       employmentStatus: "Active",
       attendance: "90.2%",
+      checkedin: null, checkedout: null,
+      payments:     { paymentId: "6534", value: 7220, dueDate: "2025-07-12", issueDate: "2025-06-17", status: "Pending" },
+
       payroll: {
         baseSalary: 5500,
         housingBenefits: 1200,
@@ -415,8 +425,6 @@ export const Departments = {
         commissions: 1800,
         deductions: 700,
         netPay: 8450,
-        paymentStatus: "Paid",
-        paymentDate: "2025-07-15"
       },
       documents: ["ID", "Contract"],
       documentsDetails: [
@@ -431,7 +439,7 @@ export const Departments = {
       id: "21013",
       accountType: "user",
       profileImage: profileImage04,
-      name: "Noura H. Stevens",
+      name: "Nour H. Stevens",
       status: "active",
       firstName: "Noura",
       middleName: "H.",
@@ -446,6 +454,9 @@ export const Departments = {
       role: "Sales Analyst",
       employmentStatus: "Active",
       attendance: "96.7%",
+      checkedin: null, checkedout: null,
+      payments:    { paymentId: "1904", value: 4912, dueDate: "2025-09-05", issueDate: "2025-06-12", status: "Paid" },
+
       payroll: {
         baseSalary: 5000,
         housingBenefits: 1000,
@@ -454,8 +465,7 @@ export const Departments = {
         commissions: 1200,
         deductions: 600,
         netPay: 7000,
-        paymentStatus: "Paid",
-        paymentDate: "2025-07-15"
+
       },
       documents: ["ID", "Contract", "Analysis Samples"],
       documentsDetails: [
@@ -471,12 +481,12 @@ export const Departments = {
       id: "21014",
       accountType: "user",
       profileImage: profileImage13,
-      name: "Salim R. Carter",
+      name: "Matz R. Carter",
       status: "disabled",
-      firstName: "Salim",
+      firstName: "Matz",
       middleName: "R.",
       lastName: "Carter",
-      email: "salim.r.carter@company.com",
+      email: "Matz.r.carter@company.com",
       phone: "+1-713-555-0162",
       address: "1600 Pennsylvania Ave NW, Washington, DC, USA",
       dateOfBirth: "1986-03-12",
@@ -486,6 +496,9 @@ export const Departments = {
       role: "Territory Manager",
       employmentStatus: "Disabled",
       attendance: "75.3%",
+      checkedin: "07:50", checkedout: null ,
+      payments:    { paymentId: "3820", value: 8367, dueDate: "2025-08-29", issueDate: "2025-07-22", status: "Pending" },
+
       payroll: {
         baseSalary: 6200,
         housingBenefits: 1350,
@@ -494,8 +507,6 @@ export const Departments = {
         commissions: 0,
         deductions: 1200,
         netPay: 8110,
-        paymentStatus: "Paid",
-        paymentDate: "2025-07-15"
       },
       documents: ["ID", "Contract"],
       documentsDetails: [
@@ -526,6 +537,9 @@ export const Departments = {
     role: "HR Manager",
     employmentStatus: "Active",
     attendance: "91.3%",
+     checkedin: null, checkedout: null ,
+     payments:     { paymentId: "1012", value: 7350, dueDate: "2025-07-24", issueDate: "2025-07-03", status: "Paid" },
+
     payroll: {
       baseSalary: 6800,
       housingBenefits: 1400,
@@ -534,8 +548,7 @@ export const Departments = {
       commissions: 1000,
       deductions: 900,
       netPay: 9400,
-      paymentStatus: "Paid",
-      paymentDate: "2025-07-15"
+    
     },
     documents: ["ID", "Contract"],
     documentsDetails: [
@@ -605,6 +618,9 @@ export const Departments = {
     role: "Recruiter",
     employmentStatus: "Active",
     attendance: "87.5%",
+    checkedin: "06:45", checkedout: null,
+    payments:     { paymentId: "6045", value: 6498, dueDate: "2025-09-12", issueDate: "2025-06-27", status: "Paid" },
+
     payroll: {
       baseSalary: 5000,
       housingBenefits: 1000,
@@ -613,8 +629,7 @@ export const Departments = {
       commissions: 700,
       deductions: 600,
       netPay: 6900,
-      paymentStatus: "Paid",
-      paymentDate: "2025-07-15"
+
     },
     documents: ["ID", "Contract"],
     documentsDetails: [
@@ -684,6 +699,9 @@ export const Departments = {
     role: "Compensation Analyst",
     employmentStatus: "Active",
     attendance: "90.1%",
+     checkedin: null, checkedout: null,
+     payments:     { paymentId: "8881", value: 3805, dueDate: "2025-08-11", issueDate: "2025-07-08", status: "Pending" },
+
     payroll: {
       baseSalary: 5200,
       housingBenefits: 1100,
@@ -692,8 +710,7 @@ export const Departments = {
       commissions: 400,
       deductions: 500,
       netPay: 7100,
-      paymentStatus: "Paid",
-      paymentDate: "2025-07-15"
+
     },
     documents: ["ID", "Contract"],
     documentsDetails: [
@@ -763,6 +780,9 @@ export const Departments = {
     role: "HR Assistant",
     employmentStatus: "Inactive",
     attendance: "78.4%",
+     checkedin: "08:10", checkedout: "17:25",
+     payments:     { paymentId: "3179", value: 9987, dueDate: "2025-07-20", issueDate: "2025-06-15", status: "Paid" },
+
     payroll: {
       baseSalary: 4000,
       housingBenefits: 900,
@@ -771,8 +791,6 @@ export const Departments = {
       commissions: 0,
       deductions: 1000,
       netPay: 4600,
-      paymentStatus: "Paid",
-      paymentDate: "2025-07-15"
     },
     documents: ["ID"],
     documentsDetails: [
@@ -837,6 +855,9 @@ export const Departments = {
     role: "Accountant",
     employmentStatus: "Active",
     attendance: "95.0%",
+checkedin: null, checkedout: null,
+payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate: "2025-07-31", status: "Pending" },
+
     payroll: {
       baseSalary: 6000,
       housingBenefits: 1400,
@@ -845,8 +866,6 @@ export const Departments = {
       commissions: 800,
       deductions: 900,
       netPay: 8550,
-      paymentStatus: "Paid",
-      paymentDate: "2025-07-15"
     },
     documents: ["ID", "Contract"],
     documentsDetails: [
@@ -916,6 +935,9 @@ export const Departments = {
     role: "Financial Analyst",
     employmentStatus: "Active",
     attendance: "88.0%",
+     checkedin: "09:00", checkedout: "18:00" ,
+     payments:     { paymentId: "1876", value: 6134, dueDate: "2025-09-03", issueDate: "2025-06-21", status: "Paid" },
+
     payroll: {
       baseSalary: 5500,
       housingBenefits: 1200,
@@ -924,8 +946,6 @@ export const Departments = {
       commissions: 1200,
       deductions: 700,
       netPay: 7550,
-      paymentStatus: "Paid",
-      paymentDate: "2025-07-15"
     },
     documents: ["ID", "Contract"],
     documentsDetails: [
@@ -995,6 +1015,9 @@ export const Departments = {
     role: "Auditor",
     employmentStatus: "Active",
     attendance: "92.5%",
+     checkedin: null, checkedout: null ,
+     payments:     { paymentId: "7402", value: 7911, dueDate: "2025-07-28", issueDate: "2025-07-05", status: "Paid" },
+
     payroll: {
       baseSalary: 5800,
       housingBenefits: 1300,
@@ -1003,8 +1026,6 @@ export const Departments = {
       commissions: 500,
       deductions: 650,
       netPay: 9400,
-      paymentStatus: "Paid",
-      paymentDate: "2025-07-15"
     },
     documents: ["ID", "Contract"],
     documentsDetails: [
@@ -1074,6 +1095,9 @@ export const Departments = {
     role: "Payroll Officer",
     employmentStatus: "Disabled",
     attendance: "70.0%",
+    checkedin: "08:50", checkedout: null,
+    payments:   { paymentId: "5298", value: 8456, dueDate: "2025-08-15", issueDate: "2025-06-19", status: "Pending" },
+
     payroll: {
       baseSalary: 5300,
       housingBenefits: 1200,
@@ -1082,8 +1106,6 @@ export const Departments = {
       commissions: 0,
       deductions: 1300,
       netPay: 6050,
-      paymentStatus: "Paid",
-      paymentDate: "2025-07-15"
     },
     documents: ["Contract"],
     documentsDetails: [
@@ -1148,6 +1170,9 @@ export const Departments = {
     role: "Marketing Manager",
     employmentStatus: "Active",
     attendance: "97.0%",
+    checkedin: null, checkedout: null,
+    payments:   { paymentId: "0675", value: 3120, dueDate: "2025-09-16", issueDate: "2025-07-11", status: "Paid" },
+
     payroll: {
       baseSalary: 6500,
       housingBenefits: 1450,
@@ -1156,8 +1181,6 @@ export const Departments = {
       commissions: 1200,
       deductions: 850,
       netPay: 9550,
-      paymentStatus: "Paid",
-      paymentDate: "2025-07-15"
     },
     documents: ["ID", "Contract"],
     documentsDetails: [
@@ -1227,6 +1250,9 @@ export const Departments = {
     role: "SEO Specialist",
     employmentStatus: "Active",
     attendance: "84.0%",
+    checkedin: "06:30", checkedout: null ,
+    payments:     { paymentId: "2150", value: 7789, dueDate: "2025-07-23", issueDate: "2025-07-26", status: "Pending" },
+
     payroll: {
       baseSalary: 4800,
       housingBenefits: 1100,
@@ -1235,8 +1261,6 @@ export const Departments = {
       commissions: 500,
       deductions: 700,
       netPay: 6550,
-      paymentStatus: "Paid",
-      paymentDate: "2025-07-15"
     },
     documents: ["ID", "Contract"],
     documentsDetails: [
@@ -1306,6 +1330,9 @@ export const Departments = {
     role: "Content Creator",
     employmentStatus: "Active",
     attendance: "86.2%",
+    checkedin: null, checkedout: null,
+    payments:     { paymentId: "3831", value: 6022, dueDate: "2025-08-20", issueDate: "2025-07-07", status: "Pending" },
+
     payroll: {
       baseSalary: 5000,
       housingBenefits: 1200,
@@ -1314,8 +1341,6 @@ export const Departments = {
       commissions: 600,
       deductions: 650,
       netPay: 8600,
-      paymentStatus: "Paid",
-      paymentDate: "2025-07-15"
     },
     documents: ["ID", "Contract"],
     documentsDetails: [
@@ -1385,6 +1410,9 @@ export const Departments = {
     role: "Social Media Manager",
     employmentStatus: "Inactive",
     attendance: "73.5%",
+    checkedin: "09:10", checkedout: null,
+    payments:     { paymentId: "1311", value: 3064, dueDate: "2025-08-17", issueDate: "2025-06-24", status: "Paid" },
+
     payroll: {
       baseSalary: 5200,
       housingBenefits: 1300,
@@ -1393,8 +1421,6 @@ export const Departments = {
       commissions: 0,
       deductions: 1200,
       netPay: 6300,
-      paymentStatus: "Paid",
-      paymentDate: "2025-07-15"
     },
     documents: ["Contract"],
     documentsDetails: [

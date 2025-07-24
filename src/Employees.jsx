@@ -34,7 +34,6 @@ const Employees = () => {
         {Object.entries(departments).map(([dept, users]) => (
           <DepartmentTable key={dept} department={dept} users={users} />
         ))}
-
         
         </div>
       }

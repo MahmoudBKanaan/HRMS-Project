@@ -12,5 +12,19 @@ width: 100vw;
 .mainContent {
 top:0%;
 width: 87vw;
+
 flex: 1;
+}
+.paymentTablesContainer {
+    position: relative;
+    display:flex;
+    text-align: left;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0vw 6.7vw 0 2.7vw ;
+    height: 60vh;
+    overflow-y: scroll; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
 }

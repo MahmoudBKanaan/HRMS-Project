@@ -9,15 +9,13 @@ import "/src/components/PersonalDetails.css";
 import "/src/components/StatsContainer.css";
 import { FaUsers, FaCheckCircle, FaMoneyBillWave } from 'react-icons/fa';
 import { useState } from "react";
-import { Departments } from "../../Constants/Data";
 
 
 const UserDetails = () => {
     
-    const {currentUser,setViewDetailsPage,currentDepartment, setEditingPage, userIndex, setUserIndex} = useContext(AuthContext);
+    const {currentUser,setViewDetailsPage,currentDepartment,departments, setEditingPage, userIndex, setUserIndex} = useContext(AuthContext);
     const [tempIndex, setTempIndex] = useState(userIndex)
-    const user = Departments[currentDepartment][tempIndex]
-    console.log(user)
+    const user = departments[currentDepartment][tempIndex]
     const StatsCard = ({ icon, label, value, sub }) => (
         <div className="statsCard">
                 <div className="iconWrapper" >
@@ -41,6 +39,14 @@ const UserDetails = () => {
             setEditingPage(true);
             setViewDetailsPage(false);
         }
+
+      const calculateNetpay = ( baseSalary, housingBenefits, transportationBenefits, foodBenefits, commissions, deductions ) => {
+          return  (
+
+            Number(baseSalary) +Number(housingBenefits)+Number(transportationBenefits)+Number(foodBenefits)+Number(commissions)-Number(deductions)
+          )
+          
+      }
 
 
   return (
@@ -93,7 +99,12 @@ const UserDetails = () => {
 
             <div className="statsContainer">
             <StatsCard icon={<FaUsers />} label="Department" value= {user.department} />
-            <StatsCard icon={<FaMoneyBillWave />} label="Payroll" value={`$${user.payroll.netPay}`}  />
+            <StatsCard icon={<FaMoneyBillWave />} label="Payroll" value={"$" + calculateNetpay(user.payroll.baseSalary, 
+                                                                                                user.payroll.housingBenefits, 
+                                                                                                user.payroll.transportationBenefits, 
+                                                                                                user.payroll.foodBenefits, 
+                                                                                                user.payroll.commissions, 
+                                                                                                user.payroll.deductions,) }  />
             <StatsCard icon={<FaCheckCircle />} label="Attendance" value={user.attendance} />
             </div>
             <section className="PersonalDetailsSection" >
