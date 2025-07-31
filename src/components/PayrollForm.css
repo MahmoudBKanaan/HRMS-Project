@@ -9,6 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
 }
 .payroll-container {
   display: flex;
@@ -25,6 +26,7 @@
   border: #27455f solid 0.1vw;
   box-shadow: 0 0 10px rgba(40, 70, 95, 0.2);
   font-family: Roboto;
+  z-index: 99;
 }
 
 .title {
@@ -98,7 +100,7 @@ width: 100%;
   border: none;
   border-radius: 0.3vw;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 1.2s ease;
 }
 
 .download-btn:hover {

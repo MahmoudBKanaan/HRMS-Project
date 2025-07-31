@@ -9,23 +9,21 @@ import "/src/Attendance.css"
 import "/src/Payroll.css"
 import Popup from "./components/Popup";
 import PayrollForm from "./components/PayrollForm";
+import jsPDF from "jspdf";
 
 
 
 
-
-export const downloadPayslip = () => {
-        
-    }
 
 
 
 
 
 const Payroll = () => {
+
     
     const [paymentTarget, setPaymentTarget] = useState({});
-
+    
     const [madePayments, setMadePayments]               = useState("");
     const [pendingPayments, setPendingPayments]         = useState("");
     const [employeeNumber, setEmployeeNumber]           = useState("");
@@ -35,6 +33,108 @@ const Payroll = () => {
     const [payrollInfoPage, setPayrollInfoPage]         = useState(false);
 
     const { departments, userIndex, setDepartments} = useContext(AuthContext);
+
+
+
+    const downloadPayslip = ({users}) => {
+            
+            const user = users[userIndex];
+
+            const doc = new jsPDF();
+
+            const fullName = `${user.firstName} ${user.middleName} ${user.lastName}`;
+            const netPay =
+                Number(user.payroll.baseSalary) +
+                Number(user.payroll.housingBenefits) +
+                Number(user.payroll.transportationBenefits) +
+                Number(user.payroll.foodBenefits) +
+                Number(user.payroll.commissions) -
+                Number(user.payroll.deductions);
+
+            let y = 20;
+
+            doc.setFontSize(20);
+            doc.setFont("helvetica", "bold");
+            doc.text("Payslip", 105, y, null, null, "center");
+
+            y += 10;
+            doc.setFontSize(12);
+            doc.text("Employee Information", 14, y);
+
+            y += 8;
+            doc.setFont("helvetica", "bold");
+            doc.text("Employee Name:", 14, y);
+            doc.setFont("helvetica", "normal");
+            doc.text(fullName, 60, y);
+
+            y += 7;
+            doc.setFont("helvetica", "bold");
+            doc.text("Role:", 14, y);
+            doc.setFont("helvetica", "normal");
+            doc.text(user.role, 60, y);
+
+            y += 7;
+            doc.setFont("helvetica", "bold");
+            doc.text("Department:", 14, y);
+            doc.setFont("helvetica", "normal");
+            doc.text(`${user.department} Department`, 60, y);
+
+            y += 7;
+            doc.setFont("helvetica", "bold");
+            doc.text("Employee ID:", 14, y);
+            doc.setFont("helvetica", "normal");
+            doc.text(user.id.toString(), 60, y);
+
+            y += 7;
+            doc.setFont("helvetica", "bold");
+            doc.text("Employment Status:", 14, y);
+            doc.setFont("helvetica", "normal");
+            doc.text(user.status, 60, y);
+
+            y += 7;
+            doc.setFont("helvetica", "bold");
+            doc.text("Hire Date:", 14, y);
+            doc.setFont("helvetica", "normal");
+            doc.text(user.hireDate, 60, y);
+
+            y += 12;
+            doc.setFontSize(12);
+            doc.text("Payroll Details", 14, y);
+
+            const payrollFields = [
+                ["Base Salary", user.payroll.baseSalary],
+                ["Housing Benefits", user.payroll.housingBenefits],
+                ["Commuting Benefits", user.payroll.transportationBenefits],
+                ["Food Benefits", user.payroll.foodBenefits],
+                ["Commissions", user.payroll.commissions],
+                ["Deductions", user.payroll.deductions],
+            ];
+
+            y += 8;
+            payrollFields.forEach(([label, value]) => {
+                doc.setFont("helvetica", "bold");
+                doc.text(`${label}:`, 14, y);
+                doc.setFont("helvetica", "normal");
+                doc.text(`$${value}`, 60, y);
+                y += 7;
+            });
+
+            y += 3;
+            doc.setFont("helvetica", "bold");
+            doc.text("Net Payment:", 14, y);
+            doc.setFont("helvetica", "normal");
+            doc.text(`$${netPay.toFixed(2)}`, 60, y);
+
+            doc.save(`${fullName.replace(/ /g, "_")}_Payslip.pdf`);
+
+                
+
+
+
+
+        
+        
+    }
 
 
     useEffect(() => {
@@ -96,13 +196,6 @@ const Payroll = () => {
         func()
     }
 
-    const confirmPaymentPopup = ({ dept , users}) => {
-        setPaymentConfirmation(true)
-        setPaymentTarget({ dept , users})
-    }
-
-
-
 
 
 
@@ -138,9 +231,9 @@ const Payroll = () => {
                 } 
                 optionsList={["Confirm Payment","View Payroll Info.","Download Payslip"]} 
                 optionsListFunctions={[
-                    () => confirmPaymentPopup( {dept , users}), 
-                    () => {setPayrollInfoPage(true);  setPaymentTarget({dept , users}) }, 
-                    () => downloadPayslip({dept , users}), ]}   
+                    () => {setPaymentConfirmation(true);    setPaymentTarget({dept , users})}, 
+                    () => {setPayrollInfoPage(true);        setPaymentTarget({dept , users})}, 
+                    () => {downloadPayslip({users});                                        }]}   
                     />
                     
                 ))}
@@ -156,7 +249,7 @@ const Payroll = () => {
         }
 
         {payrollInfoPage && userIndex !== null && userIndex !== undefined &&
-        <PayrollForm    setPayrollInfoPage={setPayrollInfoPage} paymentTarget={paymentTarget}  />
+        <PayrollForm    setPayrollInfoPage={setPayrollInfoPage} paymentTarget={paymentTarget}  downloadPayslip={({users}) => downloadPayslip({users})} />
         }
 
 

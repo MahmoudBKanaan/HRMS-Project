@@ -14,7 +14,7 @@ top:0%;
 width: 87vw;
 flex: 1;
 }
-@media (min-width:300px) and (max-width:1000px) and (min-height:600px) and (max-height:1400px)  {
+@media (min-width:300px) and (max-width:800px) {
 .dashboardContainer {
 display: flex;
 flex-direction: row;

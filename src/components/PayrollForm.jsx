@@ -1,10 +1,9 @@
 import './PayrollForm.css';
-import { downloadPayslip } from '../Payroll';
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../AuthContext';
 
 
-const PayrollForm = ({setPayrollInfoPage, paymentTarget}) => {
+const PayrollForm = ({setPayrollInfoPage, paymentTarget, downloadPayslip}) => {
 
  
   const {userIndex} = useContext(AuthContext);
@@ -105,7 +104,7 @@ const PayrollForm = ({setPayrollInfoPage, paymentTarget}) => {
       </div>
 
       <div className="button-container">
-        <button onClick={() => downloadPayslip()} className="download-btn">Download Payslip</button>
+        <button onClick={() => downloadPayslip({users})} className="download-btn">Download Payslip</button>
       </div>
     </div>
     </div>

@@ -29,6 +29,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transform: translate(0,0.55vw);
   background-color: #152235;
   border: solid 0.1vw #27455f  ;
   border-radius: 0.2vw;
@@ -37,7 +38,7 @@
   color: #dedede;
   font-size: 1.8vh;
   width: 12vw;
-  height: 3.2vh;
+  height: 3vh;
 
 }
 .imagePerview {
@@ -45,6 +46,7 @@
   flex-direction: row;
   gap: 1vw;
   align-items: center;
+    transform: translate(0,0.44vw);
 }
 
 .form-section {

@@ -26,7 +26,7 @@ const DepartmentTable = ({ department, users }) => {
 
 
 useEffect(() => {
-  if(menuIndex !== null) {
+  if(menuIndex !== null && menuIndex !== undefined) {
       setTimeout(() => {
       setMenuIndex(null);
       }, 10000);}},[menuIndex])
@@ -80,13 +80,8 @@ return (
     }
 
     const handleAddUserButton = () => {
-            if (userIndex !== null && userIndex !== undefined) {
-              setCurrentDepartment(department);
-              setAddUser(true);
-
-      } else {
-        handleAddUserButton()
-      }
+      setCurrentDepartment(department);
+      setAddUser(true);
     }
  
     const confirmDisableAccount = () => {

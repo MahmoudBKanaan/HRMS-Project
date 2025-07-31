@@ -5,11 +5,14 @@ import "./DepartmentTable.css"
 
 
 
+
+
+
 const Table = ({ tableTitle, buttonTitle, buttonFunction ,headerList, rowList, optionsList , optionsListFunctions }) => {
 
     
     const [menuIndex, setMenuIndex] = useState(null);
-    const { setUserIndex} = useContext(AuthContext);
+    const {userIndex, setUserIndex} = useContext(AuthContext);
 
   useEffect(() => {
     if(menuIndex !== null) {
@@ -19,15 +22,23 @@ const Table = ({ tableTitle, buttonTitle, buttonFunction ,headerList, rowList, o
         return () => clearTimeout(menuIndexReset);
          }
     },[menuIndex])
+
+  useEffect(() => {
+    if(userIndex !== null) {
+        const userIndexReset = setTimeout(() => {
+        setUserIndex(null);
+        }, 5000);
+        return () => clearTimeout(userIndexReset);
+         }
+    },[userIndex])
     
+
     const DropdownMenu = ({ visible}) => {
         if(optionsList.length === optionsListFunctions.length) {
         return (
             <div className={`actionDropdown ${visible ? "show" : ""}`}>
             {optionsList.map((option, idx) => (
-            <div key={idx} onClick={() => { 
-              setUserIndex(menuIndex);
-              optionsListFunctions[idx](); }} >{option}</div>
+            <div key={idx} onClick={() =>  optionsListFunctions[idx]()} >{option}</div>
         ))}
         </div>
         );
@@ -44,7 +55,7 @@ const Table = ({ tableTitle, buttonTitle, buttonFunction ,headerList, rowList, o
       
     <div className="department">
     {buttonTitle && 
-    <button onClick={() => buttonFunction()} className="add-user">{buttonTitle}</button>
+    <button onClick={buttonFunction} className="add-user">{buttonTitle}</button>
     }
       <h2>{tableTitle}</h2>
       <table>
@@ -68,9 +79,12 @@ const Table = ({ tableTitle, buttonTitle, buttonFunction ,headerList, rowList, o
 
               <td>
                 <div className="action-container">
-                  <div onClick={() => setMenuIndex(rowIndex)}>
+                  <div onClick={() => {
+                    setMenuIndex(rowIndex);
+                    setUserIndex(rowIndex);
+                    }}>
                     <div className="menu-icon">☰</div>
-                    {menuIndex === rowIndex && <DropdownMenu visible={true} />}
+                    {menuIndex === rowIndex && userIndex === menuIndex &&  <DropdownMenu visible={true} />}
                   </div>
                 </div>
               </td>

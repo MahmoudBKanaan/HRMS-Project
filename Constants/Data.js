@@ -65,7 +65,7 @@ export const accounts =  {
       },
       {
         title: "contract",
-        type: "PDF",
+        type: "JPG",
         size: "88 KB",
         uploadedAt: "2025-02-06"
       }],
@@ -214,13 +214,12 @@ export const Departments = {
         commissions: 0,
         deductions: 900,
         netPay: 8300,
-
       },
-      documents: ["ID", "Contract", "Certifications"],
+      documents: ["ID", "Contract", "AWS Cert"],
       documentsDetails: [
-        { title: "ID", type: "PDF", size: "80 KB", uploadedAt: "2024-09-11" },
-        { title: "Contract", type: "PDF", size: "95 KB", uploadedAt: "2024-09-11" },
-        { title: "AWS Cert", type: "PDF", size: "120 KB", uploadedAt: "2025-01-05" }
+        { title: "ID",        type: "JPG", size: "80 KB", uploadedAt: "2024-09-11" },
+        { title: "Contract",  type: "JPG", size: "95 KB", uploadedAt: "2024-09-11" },
+        { title: "AWS Cert",  type: "PDF", size: "120 KB", uploadedAt: "2025-01-05" }
       ],
       requests: [
         { requestId: "60021", requestType: "leave", startDate: "2025-08-01", endDate: "2025-08-10", reason: "Family vacation", status: "Approved" },
@@ -260,8 +259,8 @@ export const Departments = {
       },
       documents: ["ID", "Contract"],
       documentsDetails: [
-        { title: "ID", type: "PDF", size: "88 KB", uploadedAt: "2023-12-02" },
-        { title: "Contract", type: "PDF", size: "90 KB", uploadedAt: "2023-12-02" }
+        { title: "ID", type: "JPG", size: "88 KB", uploadedAt: "2023-12-02" },
+        { title: "Contract", type: "JPG", size: "90 KB", uploadedAt: "2023-12-02" }
       ],
       requests: [
         { requestId: "60031", requestType: "leave", startDate: "2025-10-05", endDate: "2025-10-12", reason: "Family reunion", status: "Approved" },
@@ -300,10 +299,10 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
         deductions: 700,
         netPay: 7350,
       },
-      documents: ["ID", "Contract", "Report Samples"],
+      documents: ["ID", "Contract", "Test Report"],
       documentsDetails: [
         { title: "ID", type: "PDF", size: "86 KB", uploadedAt: "2025-02-15" },
-        { title: "Contract", type: "PDF", size: "91 KB", uploadedAt: "2025-02-15" },
+        { title: "Contract", type: "JPG", size: "91 KB", uploadedAt: "2025-02-15" },
         { title: "Test Report", type: "PDF", size: "225 KB", uploadedAt: "2025-06-10" }
       ],
       requests: [
@@ -343,8 +342,8 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
       },
       documents: ["ID", "Contract"],
       documentsDetails: [
-        { title: "ID", type: "PDF", size: "83 KB", uploadedAt: "2022-04-19" },
-        { title: "Contract", type: "PDF", size: "87 KB", uploadedAt: "2022-04-19" }
+        { title: "ID", type: "JPG", size: "83 KB", uploadedAt: "2022-04-19" },
+        { title: "Contract", type: "JPG", size: "87 KB", uploadedAt: "2022-04-19" }
       ],
       requests: [
         { requestId: "60051", requestType: "leave", startDate: "2024-12-20", endDate: "2025-01-05", reason: "Sabbatical", status: "Approved" },
@@ -385,7 +384,7 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
         deductions: 1000,
         netPay: 11250,
       },
-      documents: ["ID", "Contract", "Sales Report"],
+      documents: ["ID", "Contract", "Q2 Report"],
       documentsDetails: [
         { title: "ID", type: "PDF", size: "89 KB", uploadedAt: "2024-05-03" },
         { title: "Contract", type: "PDF", size: "94 KB", uploadedAt: "2024-05-03" },
@@ -428,8 +427,8 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
       },
       documents: ["ID", "Contract"],
       documentsDetails: [
-        { title: "ID", type: "PDF", size: "85 KB", uploadedAt: "2023-10-13" },
-        { title: "Contract", type: "PDF", size: "90 KB", uploadedAt: "2023-10-13" }
+        { title: "ID", type: "JPG", size: "85 KB", uploadedAt: "2023-10-13" },
+        { title: "Contract", type: "JPG", size: "90 KB", uploadedAt: "2023-10-13" }
       ],
       requests: [
         { requestId: "70031", requestType: "leave", startDate: "2025-11-10", endDate: "2025-11-18", reason: "Conference attendance", status: "Approved" }
@@ -467,11 +466,11 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
         netPay: 7000,
 
       },
-      documents: ["ID", "Contract", "Analysis Samples"],
+      documents: ["ID", "Contract", "Market Analysis"],
       documentsDetails: [
         { title: "ID", type: "PDF", size: "87 KB", uploadedAt: "2025-01-06" },
         { title: "Contract", type: "PDF", size: "92 KB", uploadedAt: "2025-01-06" },
-        { title: "Market Analysis", type: "PDF", size: "200 KB", uploadedAt: "2025-06-20" }
+        { title: "Market Analysis", type: "JPG", size: "200 KB", uploadedAt: "2025-06-20" }
       ],
       requests: [
         { requestId: "70041", requestType: "training", startDate: "2025-09-01", endDate: "2025-09-03", reason: "Data analytics course", status: "Pending" }
@@ -510,7 +509,7 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
       },
       documents: ["ID", "Contract"],
       documentsDetails: [
-        { title: "ID", type: "PDF", size: "82 KB", uploadedAt: "2021-07-16" },
+        { title: "ID", type: "JPG", size: "82 KB", uploadedAt: "2021-07-16" },
         { title: "Contract", type: "PDF", size: "86 KB", uploadedAt: "2021-07-16" }
       ],
       requests: [
@@ -560,7 +559,7 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
       },
       {
         title: "Contract",
-        type: "PDF",
+        type: "JPG",
         size: "95 KB",
         uploadedAt: "2022-05-11"
       }
@@ -635,7 +634,7 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
     documentsDetails: [
       {
         title: "ID",
-        type: "PDF",
+        type: "JPG",
         size: "88 KB",
         uploadedAt: "2024-03-02"
       },
@@ -722,7 +721,7 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
       },
       {
         title: "Contract",
-        type: "PDF",
+        type: "JPG",
         size: "91 KB",
         uploadedAt: "2023-08-13"
       }
@@ -796,7 +795,7 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
     documentsDetails: [
       {
         title: "ID",
-        type: "PDF",
+        type: "JPG",
         size: "80 KB",
         uploadedAt: "2022-02-02"
       }
@@ -951,7 +950,7 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
     documentsDetails: [
       {
         title: "ID",
-        type: "PDF",
+        type: "JPG",
         size: "89 KB",
         uploadedAt: "2022-07-21"
       },
@@ -1037,7 +1036,7 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
       },
       {
         title: "Contract",
-        type: "PDF",
+        type: "JPG",
         size: "93 KB",
         uploadedAt: "2023-02-11"
       }
@@ -1192,7 +1191,7 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
       },
       {
         title: "Contract",
-        type: "PDF",
+        type: "JPG",
         size: "97 KB",
         uploadedAt: "2021-06-02"
       }
@@ -1352,7 +1351,7 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
       },
       {
         title: "Contract",
-        type: "PDF",
+        type: "JPG",
         size: "91 KB",
         uploadedAt: "2023-03-21"
       }
