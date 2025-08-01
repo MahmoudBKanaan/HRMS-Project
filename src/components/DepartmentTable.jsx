@@ -15,9 +15,9 @@ const DepartmentTable = ({ department, users }) => {
   const [menuIndex, setMenuIndex] = useState(null);
   const [disableAccountPopup, setDisableAccountPopup] = useState(false);
   const [activateAccountPopup, setActivateAccountPopup] = useState(false);
-  const [isMobile, SetIsMobile] = useState(false);
+  const [addUserTrigger, setAddUserTrigger] = useState(false);
   
-  const {setAddUser, setCurrentDepartment, setUserIndex,
+  const {setAddUser, currentDepartment,setCurrentDepartment, setUserIndex,
           userIndex, setEditingPage, setViewDetailsPage,
           setCurrentUser, departments,setDepartments,} = useContext(AuthContext);
 
@@ -31,14 +31,23 @@ useEffect(() => {
       setMenuIndex(null);
       }, 10000);}},[menuIndex])
 
+      useEffect(() => {
+        if (addUserTrigger === true && currentDepartment !== null && currentDepartment !== undefined) {
+          setAddUser(true)
+        }
+        setTimeout(() => {
+          setAddUserTrigger(false)
+        }, 5000);
+
+      },[addUserTrigger])
 
 
 const DropdownMenu = ({ visible }) => {
 return (
   <div className={`actionDropdown ${visible ? "show" : ""}`}>
     <div onClick={() => {
-      handleViewDetailButton();
       setUserIndex(menuIndex);
+      handleViewDetailButton();
     }
     } >View Details</div>
     <div onClick={() => {
@@ -60,29 +69,40 @@ return (
 );
 };
 
+    let ViewDetailButtonCounter = 0;
     const handleViewDetailButton  = () => {
-      if (userIndex !== null && userIndex !== undefined) {
-        setCurrentDepartment(department);
-        setCurrentUser(() => departments[department][userIndex])
-        setViewDetailsPage(true);
-      } else {
-        handleViewDetailButton()
+        if (menuIndex !== null && menuIndex !== undefined) {
+          setCurrentDepartment(department);
+          setCurrentUser(() => departments[department][menuIndex])
+          setViewDetailsPage(true);
+        } else if (ViewDetailButtonCounter < 3) {
+        ViewDetailButtonCounter++;
+        setTimeout(() => {
+          handleViewDetailButton();
+        }, 100);
       }
+      
     }
+
+    let EditButtonCounter = 0;
     const handleEditButton = () => {
-            if (userIndex !== null && userIndex !== undefined) {
+            if (menuIndex !== null && menuIndex !== undefined) {
               setCurrentDepartment(department);
               setEditingPage(true);
 
-      } else {
-        handleViewDetailButton()
+      } else if (EditButtonCounter < 3) {
+        EditButtonCounter++;
+        setTimeout(() => {
+          handleEditButton();
+        }, 100);
       }
     }
 
     const handleAddUserButton = () => {
       setCurrentDepartment(department);
-      setAddUser(true);
-    }
+      setAddUserTrigger(true);
+      }
+    
  
     const confirmDisableAccount = () => {
       const updatedusers = [...users]
@@ -93,7 +113,7 @@ return (
       setDepartments(prev => ({
         ...prev, [department]: updatedusers
       }))
-      setPopup(false)
+      setDisableAccountPopup(false)
     }
 
     const confirmActivateAccount = () => {
@@ -110,7 +130,7 @@ return (
 
 
 
-    return (
+  return (
       <>
     <div className="department">
     <button onClick={() => handleAddUserButton()} className="add-user">Add User</button>

@@ -14,6 +14,7 @@ import { useState } from "react";
 const UserDetails = () => {
     
     const {currentUser,setViewDetailsPage,currentDepartment,departments, setEditingPage, userIndex, setUserIndex} = useContext(AuthContext);
+    if(userIndex === null || userIndex === undefined) {return}
     const [tempIndex, setTempIndex] = useState(userIndex)
     const user = departments[currentDepartment][tempIndex]
     const StatsCard = ({ icon, label, value, sub }) => (

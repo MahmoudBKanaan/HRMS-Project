@@ -77,7 +77,7 @@ export const accounts =  {
             startDate: "2025-08-15",
             endDate: "2025-09-15",
             reason: "The employee is .....",
-            screenLefttatus: "Approved"
+            status: "Rejected"
           },
           {
             requestId: "46546",
@@ -85,14 +85,14 @@ export const accounts =  {
             startDate: "2025-08-15",
             endDate: "2025-09-15",
             reason: "The employee is .....",
-            screenLefttatus: "pending"
+            status: "pending"
           },
           {
             requestId: "45874",
             requestType: "resignation",
             date: "2025-09-15",
             reason: "The employee is .....",
-            status: "Approved"
+            status: "Rejected"
           },
           {
             requestId: "65465",
@@ -151,14 +151,14 @@ export const accounts =  {
             startDate: "2025-08-15",
             endDate: "2025-09-15",
             reason: "The employee is .....",
-            screenLefttatus: "Approved"
+            status: "Rejected"
           },
           {
             requestId: "46546",
             startDate: "2025-08-15",
             endDate: "2025-09-15",
             reason: "The employee is .....",
-            screenLefttatus: "pending"
+            status: "pending"
           },
         ],
         resignation:[
@@ -166,7 +166,7 @@ export const accounts =  {
             requestId: "45874",
             date: "2025-09-15",
             reason: "The employee is .....",
-            status: "Approved"
+            status: "Rejected"
           },
           {
             requestId: "65465",
@@ -204,7 +204,9 @@ export const Departments = {
       employmentStatus: "Active",
       attendance: "97.8%",
       checkedin: null, checkedout: null,
-      payments:   { paymentId: "7703", value: 5567, dueDate: "2025-07-16", issueDate: "2025-07-29", status: "Pending" },
+      payments: [
+        { paymentId: "7703", value: 5567, dueDate: "2025-07-16", issueDate: "2025-07-29", status: "Pending" },
+      ] ,
 
       payroll: {
         baseSalary: 6500,
@@ -222,7 +224,7 @@ export const Departments = {
         { title: "AWS Cert",  type: "PDF", size: "120 KB", uploadedAt: "2025-01-05" }
       ],
       requests: [
-        { requestId: "60021", requestType: "leave", startDate: "2025-08-01", endDate: "2025-08-10", reason: "Family vacation", status: "Approved" },
+        { requestId: "60021", requestType: "leave", startDate: "2025-08-01", endDate: "2025-08-10", reason: "Family vacation", status: "Rejected" },
         { requestId: "60022", requestType: "training", startDate: "2025-09-15", endDate: "2025-09-19", reason: "Kubernetes workshop", status: "Pending" }
       ]
     },
@@ -246,7 +248,10 @@ export const Departments = {
       employmentStatus: "Active",
       attendance: "92.5%",
        checkedin: null, checkedout:null ,
-       payments:     { paymentId: "4628", value: 6289, dueDate: "2025-09-28", issueDate: "2025-07-19", status: "Pending" },
+       payments:  [
+         { paymentId: "4628", value: 6289, dueDate: "2025-09-28", issueDate: "2025-07-19", status: "Pending" },
+        ]
+,
 
       payroll: {
         baseSalary: 4800,
@@ -263,8 +268,8 @@ export const Departments = {
         { title: "Contract", type: "JPG", size: "90 KB", uploadedAt: "2023-12-02" }
       ],
       requests: [
-        { requestId: "60031", requestType: "leave", startDate: "2025-10-05", endDate: "2025-10-12", reason: "Family reunion", status: "Approved" },
-        { requestId: "60032", requestType: "equipment", date: "2025-07-20", reason: "New laptop", status: "Pending" }
+        { requestId: "60031", requestType: "leave", startDate: "2025-10-05", endDate: "2025-10-12", reason: "Family reunion", status: "Rejected" },
+        { requestId: "60032", requestType: "equipment", startDate: "2025-07-20", reason: "New laptop", status: "Pending" }
       ]
     },
     {
@@ -287,7 +292,9 @@ export const Departments = {
       employmentStatus: "Active",
       attendance: "95.0%",
 checkedin: "07:42", checkedout: null,
-payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate: "2025-06-30", status: "Pending" },
+payments: [
+  { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate: "2025-06-30", status: "Pending" },
+]  ,
 
 
       payroll: {
@@ -329,7 +336,10 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
       employmentStatus: "Disabled",
       attendance: "68.4%",
       checkedin: null, checkedout: null,
-      payments:     { paymentId: "4547", value: 9374, dueDate: "2025-07-30", issueDate: "2025-06-08", status: "Pending" },
+      payments: [
+        { paymentId: "4547", value: 9374, dueDate: "2025-07-30", issueDate: "2025-06-08", status: "Pending" }
+      ]
+,
 
       payroll: {
         baseSalary: 5600,
@@ -347,7 +357,7 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
       ],
       requests: [
         { requestId: "60051", requestType: "leave", startDate: "2024-12-20", endDate: "2025-01-05", reason: "Sabbatical", status: "Approved" },
-        { requestId: "60052", requestType: "resignation", date: "2025-06-30", reason: "Contract end", status: "Approved" }
+        { requestId: "60052", requestType: "resignation", startDate: "2025-06-30", reason: "Contract end", status: "Rejected" }
       ]
     }
   ],
@@ -373,7 +383,13 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
       employmentStatus: "Active",
       attendance: "94.6%",
       checkedin: "06:58", checkedout: null,
-      payments:     { paymentId: "9309", value: 3421, dueDate: "2025-08-23", issueDate: "2025-07-14", status: "Pending" },
+      payments: [
+        
+          
+          { paymentId: "9309", value: 3421, dueDate: "2025-08-23", issueDate: "2025-07-14", status: "Pending" },
+        
+      ]
+,
 
       payroll: {
         baseSalary: 7000,
@@ -414,7 +430,11 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
       employmentStatus: "Active",
       attendance: "90.2%",
       checkedin: null, checkedout: null,
-      payments:     { paymentId: "6534", value: 7220, dueDate: "2025-07-12", issueDate: "2025-06-17", status: "Pending" },
+      payments: [
+
+
+        { paymentId: "6534", value: 7220, dueDate: "2025-07-12", issueDate: "2025-06-17", status: "Pending" },
+      ], 
 
       payroll: {
         baseSalary: 5500,
@@ -454,7 +474,10 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
       employmentStatus: "Active",
       attendance: "96.7%",
       checkedin: null, checkedout: null,
-      payments:    { paymentId: "1904", value: 4912, dueDate: "2025-09-05", issueDate: "2025-06-12", status: "Paid" },
+      payments: [
+        { paymentId: "1904", value: 4912, dueDate: "2025-09-05", issueDate: "2025-06-12", status: "Paid" }
+      ]
+,
 
       payroll: {
         baseSalary: 5000,
@@ -496,7 +519,10 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
       employmentStatus: "Disabled",
       attendance: "75.3%",
       checkedin: "07:50", checkedout: null ,
-      payments:    { paymentId: "3820", value: 8367, dueDate: "2025-08-29", issueDate: "2025-07-22", status: "Pending" },
+      payments: [
+        { paymentId: "3820", value: 8367, dueDate: "2025-08-29", issueDate: "2025-07-22", status: "Pending" }
+      ]
+,
 
       payroll: {
         baseSalary: 6200,
@@ -537,7 +563,9 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
     employmentStatus: "Active",
     attendance: "91.3%",
      checkedin: null, checkedout: null ,
-     payments:     { paymentId: "1012", value: 7350, dueDate: "2025-07-24", issueDate: "2025-07-03", status: "Paid" },
+     payments: [
+       { paymentId: "1012", value: 7350, dueDate: "2025-07-24", issueDate: "2025-07-03", status: "Paid" },
+      ],
 
     payroll: {
       baseSalary: 6800,
@@ -571,7 +599,7 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
         startDate: "2025-09-01",
         endDate: "2025-09-10",
         reason: "Conference attendance",
-        screenLefttatus: "Approved"
+        status: "Rejected"
       },
       {
         requestId: "80099",
@@ -579,19 +607,13 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
         startDate: "2026-01-01",
         endDate: "2026-01-31",
         reason: "Relocation",
-        screenLefttatus: "Pending"
-      },
-      {
-        requestId: "80099",
-        requestType: "resignation",
-        date: "2026-01-31",
-        reason: "Relocation",
         status: "Pending"
       },
+
       {
         requestId: "80155",
         requestType: "leave",
-        date: "2025-11-05",
+        startDate: "2025-11-05",
         reason: "Medical appointment",
         status: "Approved"
       }
@@ -618,7 +640,9 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
     employmentStatus: "Active",
     attendance: "87.5%",
     checkedin: "06:45", checkedout: null,
-    payments:     { paymentId: "6045", value: 6498, dueDate: "2025-09-12", issueDate: "2025-06-27", status: "Paid" },
+    payments: [
+      { paymentId: "6045", value: 6498, dueDate: "2025-09-12", issueDate: "2025-06-27", status: "Paid" },
+    ],
 
     payroll: {
       baseSalary: 5000,
@@ -652,7 +676,7 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
         startDate: "2025-07-20",
         endDate: "2025-07-25",
         reason: "Family leave",
-        screenLefttatus: "Approved"
+        status: "Approved"
       },
       {
         requestId: "82222",
@@ -660,21 +684,21 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
         startDate: "2026-04-01",
         endDate: "2026-04-30",
         reason: "Changing industries",
-        screenLefttatus: "Pending"
+        status: "Pending"
       },
       {
-        requestId: "82222",
+        requestId: "56456",
         requestType: "resignation",
-        date: "2026-04-30",
+        startDate: "2026-04-30",
         reason: "Changing industries",
         status: "Pending"
       },
       {
         requestId: "83333",
         requestType: "leave",
-        date: "2025-12-10",
+        startDate: "2025-12-10",
         reason: "Training workshop",
-        status: "Approved"
+        status: "Rejected"
       }
     ]
   },
@@ -699,7 +723,9 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
     employmentStatus: "Active",
     attendance: "90.1%",
      checkedin: null, checkedout: null,
-     payments:     { paymentId: "8881", value: 3805, dueDate: "2025-08-11", issueDate: "2025-07-08", status: "Pending" },
+     payments: [
+       { paymentId: "8881", value: 3805, dueDate: "2025-08-11", issueDate: "2025-07-08", status: "Pending" },
+      ],
 
     payroll: {
       baseSalary: 5200,
@@ -733,7 +759,7 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
         startDate: "2025-10-01",
         endDate: "2025-10-07",
         reason: "Personal reasons",
-        screenLefttatus: "Approved"
+        status: "Approved"
       },
       {
         requestId: "85251",
@@ -741,19 +767,19 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
         startDate: "2026-06-01",
         endDate: "2026-06-30",
         reason: "Joining another firm",
-        screenLefttatus: "Pending"
+        status: "Pending"
       },
       {
         requestId: "85251",
         requestType: "resignation",
-        date: "2026-06-30",
+        startDate: "2026-06-30",
         reason: "Joining another firm",
         status: "Pending"
       },
       {
         requestId: "86365",
         requestType: "leave",
-        date: "2025-08-20",
+        startDate: "2025-08-20",
         reason: "Sick leave",
         status: "Approved"
       }
@@ -780,7 +806,9 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
     employmentStatus: "Inactive",
     attendance: "78.4%",
      checkedin: "08:10", checkedout: "17:25",
-     payments:     { paymentId: "3179", value: 9987, dueDate: "2025-07-20", issueDate: "2025-06-15", status: "Paid" },
+     payments: [
+       { paymentId: "3179", value: 9987, dueDate: "2025-07-20", issueDate: "2025-06-15", status: "Paid" },
+      ],
 
     payroll: {
       baseSalary: 4000,
@@ -807,7 +835,7 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
         startDate: "2024-09-10",
         endDate: "2024-09-20",
         reason: "Family emergency",
-        screenLefttatus: "Approved"
+        status: "Rejected"
       },
       {
         requestId: "88222",
@@ -815,21 +843,21 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
         startDate: "2025-04-01",
         endDate: "2025-04-30",
         reason: "Pursuing freelance work",
-        screenLefttatus: "Approved"
+        status: "Approved"
       },
       {
-        requestId: "88222",
+        requestId: "54564",
         requestType: "resignation",
-        date: "2025-04-30",
+        startDate: "2025-04-30",
         reason: "Pursuing freelance work",
         status: "Approved"
       },
       {
         requestId: "89333",
         requestType: "leave",
-        date: "2025-03-15",
+        startDate: "2025-03-15",
         reason: "Relocation leave",
-        status: "Approved"
+        status: "Rejected"
       }
     ]
   }
@@ -855,7 +883,9 @@ payments:     { paymentId: "2522", value: 5626, dueDate: "2025-08-07", issueDate
     employmentStatus: "Active",
     attendance: "95.0%",
 checkedin: null, checkedout: null,
-payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate: "2025-07-31", status: "Pending" },
+payments: [
+  { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate: "2025-07-31", status: "Pending" },
+], 
 
     payroll: {
       baseSalary: 6000,
@@ -888,7 +918,7 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
         startDate: "2025-08-10",
         endDate: "2025-08-18",
         reason: "Family vacation",
-        screenLefttatus: "Approved"
+        status: "Approved"
       },
       {
         requestId: "91234",
@@ -896,19 +926,19 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
         startDate: "2026-05-01",
         endDate: "2026-05-31",
         reason: "MBA program",
-        screenLefttatus: "Pending"
+        status: "Pending"
       },
       {
-        requestId: "91234",
+        requestId: "56555",
         requestType: "resignation",
-        date: "2026-05-31",
+        startDate: "2026-05-31",
         reason: "MBA program",
         status: "Pending"
       },
       {
         requestId: "92345",
         requestType: "leave",
-        date: "2025-11-15",
+        startDate: "2025-11-15",
         reason: "Medical leave",
         status: "Approved"
       }
@@ -935,7 +965,9 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
     employmentStatus: "Active",
     attendance: "88.0%",
      checkedin: "09:00", checkedout: "18:00" ,
-     payments:     { paymentId: "1876", value: 6134, dueDate: "2025-09-03", issueDate: "2025-06-21", status: "Paid" },
+     payments: [
+       { paymentId: "1876", value: 6134, dueDate: "2025-09-03", issueDate: "2025-06-21", status: "Paid" },
+      ],
 
     payroll: {
       baseSalary: 5500,
@@ -968,7 +1000,7 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
         startDate: "2025-09-05",
         endDate: "2025-09-12",
         reason: "Training course",
-        screenLefttatus: "Approved"
+        status: "Rejected"
       },
       {
         requestId: "94567",
@@ -976,19 +1008,13 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
         startDate: "2026-07-01",
         endDate: "2026-07-31",
         reason: "Career pivot",
-        screenLefttatus: "Pending"
-      },
-      {
-        requestId: "94567",
-        requestType: "resignation",
-        date: "2026-07-31",
-        reason: "Career pivot",
         status: "Pending"
       },
+
       {
         requestId: "95678",
         requestType: "leave",
-        date: "2025-12-01",
+        startDate: "2025-12-01",
         reason: "Year-end break",
         status: "Approved"
       }
@@ -1015,7 +1041,9 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
     employmentStatus: "Active",
     attendance: "92.5%",
      checkedin: null, checkedout: null ,
-     payments:     { paymentId: "7402", value: 7911, dueDate: "2025-07-28", issueDate: "2025-07-05", status: "Paid" },
+     payments: [
+       { paymentId: "7402", value: 7911, dueDate: "2025-07-28", issueDate: "2025-07-05", status: "Paid" },
+      ],
 
     payroll: {
       baseSalary: 5800,
@@ -1048,7 +1076,7 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
         startDate: "2025-10-15",
         endDate: "2025-10-22",
         reason: "Workshop",
-        screenLefttatus: "Approved"
+        status: "Approved"
       },
       {
         requestId: "97890",
@@ -1056,21 +1084,15 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
         startDate: "2026-09-01",
         endDate: "2026-09-30",
         reason: "Further certification",
-        screenLefttatus: "Pending"
-      },
-      {
-        requestId: "97890",
-        requestType: "resignation",
-        date: "2026-09-30",
-        reason: "Further certification",
         status: "Pending"
       },
+
       {
         requestId: "98901",
         requestType: "leave",
-        date: "2025-11-25",
+        startDate: "2025-11-25",
         reason: "Medical leave",
-        status: "Approved"
+        status: "Rejected"
       }
     ]
   },
@@ -1095,7 +1117,9 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
     employmentStatus: "Disabled",
     attendance: "70.0%",
     checkedin: "08:50", checkedout: null,
-    payments:   { paymentId: "5298", value: 8456, dueDate: "2025-08-15", issueDate: "2025-06-19", status: "Pending" },
+    payments: [
+      { paymentId: "5298", value: 8456, dueDate: "2025-08-15", issueDate: "2025-06-19", status: "Pending" },
+    ],
 
     payroll: {
       baseSalary: 5300,
@@ -1122,7 +1146,7 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
         startDate: "2024-11-01",
         endDate: "2024-11-10",
         reason: "Health recovery",
-        screenLefttatus: "Approved"
+        status: "Approved"
       },
       {
         requestId: "91023",
@@ -1130,19 +1154,13 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
         startDate: "2025-03-01",
         endDate: "2025-03-31",
         reason: "Retirement",
-        screenLefttatus: "Approved"
-      },
-      {
-        requestId: "91023",
-        requestType: "resignation",
-        date: "2025-03-31",
-        reason: "Retirement",
         status: "Approved"
       },
+
       {
         requestId: "92034",
         requestType: "leave",
-        date: "2025-02-15",
+        startDate: "2025-02-15",
         reason: "Personal leave",
         status: "Approved"
       }
@@ -1170,7 +1188,9 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
     employmentStatus: "Active",
     attendance: "97.0%",
     checkedin: null, checkedout: null,
-    payments:   { paymentId: "0675", value: 3120, dueDate: "2025-09-16", issueDate: "2025-07-11", status: "Paid" },
+    payments: [
+      { paymentId: "0675", value: 3120, dueDate: "2025-09-16", issueDate: "2025-07-11", status: "Paid" },
+    ],
 
     payroll: {
       baseSalary: 6500,
@@ -1203,7 +1223,7 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
         startDate: "2025-08-05",
         endDate: "2025-08-12",
         reason: "Annual retreat",
-        screenLefttatus: "Approved"
+        status: "Approved"
       },
       {
         requestId: "101234",
@@ -1211,21 +1231,15 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
         startDate: "2026-03-01",
         endDate: "2026-03-31",
         reason: "Relocation",
-        screenLefttatus: "Pending"
-      },
-      {
-        requestId: "101234",
-        requestType: "resignation",
-        date: "2026-03-31",
-        reason: "Relocation",
         status: "Pending"
       },
+
       {
         requestId: "102345",
         requestType: "leave",
-        date: "2025-11-20",
+        startDate: "2025-11-20",
         reason: "Medical leave",
-        status: "Approved"
+        status: "Rejected"
       }
     ]
   },
@@ -1250,7 +1264,9 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
     employmentStatus: "Active",
     attendance: "84.0%",
     checkedin: "06:30", checkedout: null ,
-    payments:     { paymentId: "2150", value: 7789, dueDate: "2025-07-23", issueDate: "2025-07-26", status: "Pending" },
+    payments: [
+      { paymentId: "2150", value: 7789, dueDate: "2025-07-23", issueDate: "2025-07-26", status: "Pending" },
+    ],
 
     payroll: {
       baseSalary: 4800,
@@ -1283,7 +1299,7 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
         startDate: "2025-09-15",
         endDate: "2025-09-22",
         reason: "Training",
-        screenLefttatus: "Approved"
+        status: "Rejected"
       },
       {
         requestId: "104567",
@@ -1291,19 +1307,14 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
         startDate: "2026-05-01",
         endDate: "2026-05-31",
         reason: "Further studies",
-        screenLefttatus: "Pending"
-      },
-      {
-        requestId: "104567",
-        requestType: "resignation",
-        date: "2026-05-31",
-        reason: "Further studies",
         status: "Pending"
       },
+
       {
         requestId: "105678",
         requestType: "leave",
-        date: "2025-12-05",
+        startDate: "2025-12-05",
+        endDate: "2025-09-22",
         reason: "Year-end break",
         status: "Approved"
       }
@@ -1330,7 +1341,9 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
     employmentStatus: "Active",
     attendance: "86.2%",
     checkedin: null, checkedout: null,
-    payments:     { paymentId: "3831", value: 6022, dueDate: "2025-08-20", issueDate: "2025-07-07", status: "Pending" },
+    payments: [
+      { paymentId: "3831", value: 6022, dueDate: "2025-08-20", issueDate: "2025-07-07", status: "Pending" },
+    ],
 
     payroll: {
       baseSalary: 5000,
@@ -1363,7 +1376,7 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
         startDate: "2025-07-25",
         endDate: "2025-08-01",
         reason: "Festival break",
-        screenLefttatus: "Approved"
+        status: "Rejected"
       },
       {
         requestId: "107890",
@@ -1371,21 +1384,15 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
         startDate: "2026-07-01",
         endDate: "2026-07-31",
         reason: "New opportunity",
-        screenLefttatus: "Pending"
-      },
-      {
-        requestId: "107890",
-        requestType: "resignation",
-        date: "2026-07-31",
-        reason: "New opportunity",
         status: "Pending"
       },
+
       {
         requestId: "108901",
         requestType: "leave",
-        date: "2025-11-30",
+        startDate: "2025-11-30",
         reason: "Medical leave",
-        status: "Approved"
+        status: "Rejected"
       }
     ]
   },
@@ -1410,7 +1417,9 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
     employmentStatus: "Inactive",
     attendance: "73.5%",
     checkedin: "09:10", checkedout: null,
-    payments:     { paymentId: "1311", value: 3064, dueDate: "2025-08-17", issueDate: "2025-06-24", status: "Paid" },
+    payments: [
+      { paymentId: "1311", value: 3064, dueDate: "2025-08-17", issueDate: "2025-06-24", status: "Paid" },
+    ],
 
     payroll: {
       baseSalary: 5200,
@@ -1437,7 +1446,7 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
         startDate: "2024-08-01",
         endDate: "2024-08-10",
         reason: "Health recovery",
-        screenLefttatus: "Approved"
+        status: "Approved"
       },
       {
         requestId: "110123",
@@ -1445,19 +1454,13 @@ payments:    { paymentId: "5290", value: 4723, dueDate: "2025-08-02", issueDate:
         startDate: "2024-12-01",
         endDate: "2024-12-31",
         reason: "Retirement",
-        screenLefttatus: "Approved"
+        status: "Rejected"
       },
-      {
-        requestId: "110123",
-        requestType: "resignation",
-        date: "2024-12-31",
-        reason: "Retirement",
-        status: "Approved"
-      },
+
       {
         requestId: "111234",
         requestType: "leave",
-        date: "2025-06-15",
+        startDate: "2025-06-15",
         reason: "Family care",
         status: "Approved"
       }

@@ -23,14 +23,7 @@ const Table = ({ tableTitle, buttonTitle, buttonFunction ,headerList, rowList, o
          }
     },[menuIndex])
 
-  useEffect(() => {
-    if(userIndex !== null) {
-        const userIndexReset = setTimeout(() => {
-        setUserIndex(null);
-        }, 5000);
-        return () => clearTimeout(userIndexReset);
-         }
-    },[userIndex])
+
     
 
     const DropdownMenu = ({ visible}) => {
@@ -72,7 +65,7 @@ const Table = ({ tableTitle, buttonTitle, buttonFunction ,headerList, rowList, o
             {rowList.map((row, rowIndex) => (
             <tr key={rowIndex} >
                 {row.map((cell, cellIndex) => (
-                <td key={cellIndex}>
+                <td key={cellIndex} className="tableCell">
                     {cell}
                 </td>
                 ))}
@@ -84,7 +77,7 @@ const Table = ({ tableTitle, buttonTitle, buttonFunction ,headerList, rowList, o
                     setUserIndex(rowIndex);
                     }}>
                     <div className="menu-icon">☰</div>
-                    {menuIndex === rowIndex && userIndex === menuIndex &&  <DropdownMenu visible={true} />}
+                    {menuIndex === rowIndex && userIndex === menuIndex &&  <DropdownMenu visible={true}   />}
                   </div>
                 </div>
               </td>

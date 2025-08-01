@@ -1,0 +1,40 @@
+.buttonWrapper {
+    display: flex;
+    padding: 0.6vw;
+    margin: 1vw 0 0 0;
+    flex-direction: row;
+    align-items: flex-start !important;
+    justify-content: space-between;
+    gap: 15vw;
+    font-size: 1.0vw;
+
+  border-radius: 0.1vw;
+  cursor: pointer;
+}
+
+.btn {
+    border-radius: 0.3vw;
+    width: 10vw;
+    font-weight: 400;
+    padding: 0.5vw;
+    height: auto;
+    color: #dedede;
+}
+.redButton {
+    background-color: #1450a0;
+}
+.blueButton {
+    background-color: #a01450;
+}
+
+textarea {
+    padding: 0.45vw 0 0.45vw 0.7vw;
+  border-radius: 0.4vw;
+  border: 0.1vw solid #27455f;
+  background-color: #152235;
+  color: #dedede;
+  justify-self:flex-end;
+  font-size: 0.9vw;
+    font-weight: 300;
+    resize:none;
+}

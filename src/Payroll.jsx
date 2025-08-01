@@ -35,7 +35,6 @@ const Payroll = () => {
     const { departments, userIndex, setDepartments} = useContext(AuthContext);
 
 
-
     const downloadPayslip = ({users}) => {
             
             const user = users[userIndex];
@@ -143,64 +142,80 @@ const Payroll = () => {
         let pendingPaymentsNumber = 0;
         let totalPayroll = 0;
         let EmployeeNumber = 0;
+
         {Object.entries(departments).map(([dept, users]) => {
             users.map((user, index) => {
-                if (user.payments.status === "Paid") {
-                    madePaymentsNumber = madePaymentsNumber+1;
-                    EmployeeNumber = EmployeeNumber+1;
-                    totalPayroll = totalPayroll+
-                    Number(user.payroll.baseSalary)+
-                    Number(user.payroll.housingBenefits)+
-                    Number(user.payroll.transportationBenefits)+
-                    Number(user.payroll.foodBenefits)+
-                    Number(user.payroll.commissions)-
-                    Number(user.payroll.deductions);
-                } else if (user.payments.status === "Pending") {
-                    pendingPaymentsNumber = pendingPaymentsNumber+1;
-                    EmployeeNumber = EmployeeNumber+1;
-                    totalPayroll = totalPayroll+
-                    Number(user.payroll.baseSalary)+
-                    Number(user.payroll.housingBenefits)+
-                    Number(user.payroll.transportationBenefits)+
-                    Number(user.payroll.foodBenefits)+
-                    Number(user.payroll.commissions)-
-                    Number(user.payroll.deductions);
-                }
+                        EmployeeNumber = EmployeeNumber+1;
+                        totalPayroll = totalPayroll+
+                        Number(user.payroll.baseSalary)+
+                        Number(user.payroll.housingBenefits)+
+                        Number(user.payroll.transportationBenefits)+
+                        Number(user.payroll.foodBenefits)+
+                        Number(user.payroll.commissions)-
+                        Number(user.payroll.deductions);
+                user.payments.map((payment) => {
+                    if (payment.status === "Paid") {
+                        madePaymentsNumber = madePaymentsNumber+1;
+                    } else if (payment.status === "Pending") {
+                        pendingPaymentsNumber = pendingPaymentsNumber+1;
+                    }
+                })
             })
             setMadePayments(madePaymentsNumber)
             setPendingPayments(pendingPaymentsNumber)
             setTotalPayroll(`$${totalPayroll.toLocaleString()}`)
             setEmployeeNumber(EmployeeNumber)
+
         })}
         
     },[departments])
     
-    const confirmPayment = () => {
-        if (!paymentTarget) return;
-        const func = () => {
-            if (userIndex !== undefined && userIndex !== null) {
-                const {dept, users} = paymentTarget;
-                const updatedusers = [...users]
-                const currentPayments = updatedusers[userIndex].payments;
-                updatedusers[userIndex] = {...updatedusers[userIndex],
-                    payments: {...currentPayments, status: "Paid"} };
+const confirmPayment = () => {
+    if (!paymentTarget) return;
+
+    const func = () => {
+        if (userIndex !== undefined && userIndex !== null) {
+            const { dept, users } = paymentTarget;
+            const updatedUsers = [...users];
+            const user = updatedUsers[userIndex];
+
+            const paymentsArray = Array.isArray(user.payments) ? [...user.payments] : [];
+
+            if (paymentsArray.length > 0) {
+                const lastPaymentIndex = paymentsArray.length - 1;
+                paymentsArray[lastPaymentIndex] = {
+                    ...paymentsArray[lastPaymentIndex],
+                    status: "Paid"
+                };
+
+                updatedUsers[userIndex] = {
+                    ...user,
+                    payments: paymentsArray
+                };
                 setDepartments(prev => ({
-                    ...prev, [dept]: updatedusers
-                }))
-                
-            } else { setTimeout(() => {
-                        func()
-                        }, 100); 
-                } 
+                    ...prev,
+                    [dept]: updatedUsers
+                }));
+            }
+        } else {
+            setTimeout(() => {
+                func();
+            }, 100);
         }
-        func()
-    }
+    };
+
+    func();
+    setPaymentConfirmation(false)
+
+
+};
+
 
 
 
 
     return (
-        <div className='AttendanceContainer'>
+        <div className='PayrollContainer'>
         <Sidebar />
         <div className="mainContent">
         <Navbar  navTitle="Payroll" navText="View Payroll Details" />
@@ -214,20 +229,30 @@ const Payroll = () => {
 
         
         <div className="paymentTablesContainer"> 
-        {Object.entries(departments).map(([dept, users]) => (
+        {Object.entries(departments).map(([dept, users]) => {
+                let entry = [];
+                users.map((user, index) => {
+                user.payments.map((payment) => {
+                    entry = [...entry,
+                        [user.name,
+                            payment.paymentId || "none",
+                            `$${payment.value}` || "none",
+                            payment.dueDate || "none",
+                            payment.issueDate || "none",
+                            payment.status || "none"]
+                    ]
+                })
+            })
+
+            return (
+
             
+
             <Table 
             key={dept}
             tableTitle={dept} 
             headerList={["Name", "Payment ID", "Value", "Due Date", "Issued", "Status", "Actions", ]} 
-            rowList={ 
-                users.map((user) => (
-                    [user.name, user.payments.paymentId || "none",
-                        `$${user.payments.value}` || "none",
-                        user.payments.dueDate || "none",
-                        user.payments.issueDate || "none",
-                        user.payments.status || "none"]
-                    )) 
+            rowList={ entry
                 } 
                 optionsList={["Confirm Payment","View Payroll Info.","Download Payslip"]} 
                 optionsListFunctions={[
@@ -235,8 +260,12 @@ const Payroll = () => {
                     () => {setPayrollInfoPage(true);        setPaymentTarget({dept , users})}, 
                     () => {downloadPayslip({users});                                        }]}   
                     />
-                    
-                ))}
+                )
+        }
+                
+                
+                
+                )}
         </div>
         
         {paymentConfirmation === true &&
@@ -248,26 +277,9 @@ const Payroll = () => {
         />
         }
 
-        {payrollInfoPage && userIndex !== null && userIndex !== undefined &&
+        {payrollInfoPage && 
         <PayrollForm    setPayrollInfoPage={setPayrollInfoPage} paymentTarget={paymentTarget}  downloadPayslip={({users}) => downloadPayslip({users})} />
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
         </div>
     );

@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const EditingPage = () => {
     
     const {departments, setDepartments, currentDepartment,userIndex , setEditingPage} = useContext(AuthContext);
-    /* console.log(currentDepartment) */
+    if(userIndex === null || userIndex === undefined) {return}
     const [selectedImage, setSelectedImage] = useState(null)
     const [tempIndex, setTempIndex] = useState(userIndex)
     const user = departments[currentDepartment][tempIndex];

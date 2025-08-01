@@ -5,7 +5,6 @@ import { AuthContext } from '../AuthContext';
 
 const PayrollForm = ({setPayrollInfoPage, paymentTarget, downloadPayslip}) => {
 
- 
   const {userIndex} = useContext(AuthContext);
   const [user, setUser] = useState()
   const {dept, users} = paymentTarget;

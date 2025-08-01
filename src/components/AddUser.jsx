@@ -5,11 +5,11 @@ import defaultImage from "/assets/logoWhite.png"
 
 const AddUser = () => {
   
-  const {setAddUser, departments, setDepartments, currentdepartment} = useContext(AuthContext);
+  const {setAddUser, departments, setDepartments, currentDepartment } = useContext(AuthContext);
   const [selectedImage, setSelectedImage] = useState(defaultImage);
   const [formData, setFormData] = useState({
   gender: "other",
-  department: currentdepartment,
+  department: currentDepartment,
 });
   
   const handleSubmit = (e) => {
@@ -49,7 +49,9 @@ const AddUser = () => {
       },
       documents: ["None"],
       documentsDetails: [],
-      requests: []
+      requests: [],
+      payments: [],
+
     };
     
   
