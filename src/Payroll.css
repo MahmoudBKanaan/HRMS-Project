@@ -29,3 +29,8 @@ flex: 1;
     scrollbar-width: none; 
     -ms-overflow-style: none;
 }
+
+@media (min-width:200px) and (max-width:800px){
+  .PayrollContainer {
+    display: none;
+}}
