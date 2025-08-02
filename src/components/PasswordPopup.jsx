@@ -12,7 +12,6 @@ export const PasswordPopup = () => {
   const [error , setError] = useState("")
 
 
-
   const handlePasswordChange = () => {
 
       let     currentPassword = '';
@@ -36,11 +35,11 @@ export const PasswordPopup = () => {
             }, 5000);
             return;
         } else {
-            if      (newPass.length < 8)            {  return"minimum length is 8 character!"}
-            else if (!/[a-z]/.test(newPass))        {  return"Please include small letters"}
-            else if (!/[A-Z]/.test(newPass))        { return"Please include Capital letters"}
-            else if (!/[0-9]/.test(newPass))        {  return"Please include numbers"}
-            else if (!/[!@#$%^&]/.test(newPass))    { return"Please include symbols !@#$%^& "}  
+            if      (newPass.length < 8)            {  setError("minimum length is 8 character!")}
+            else if (!/[a-z]/.test(newPass))        {  setError("Please include small letters")}
+            else if (!/[A-Z]/.test(newPass))        { setError("Please include Capital letters")}
+            else if (!/[0-9]/.test(newPass))        {  setError("Please include numbers")}
+            else if (!/[!@#$%^&]/.test(newPass))    { setError("Please include symbols !@#$%^& ")}  
             else {
                 const newEncryptedPassword = CryptoJS.AES.encrypt(newPass, secretKey).toString();
                 localStorage.setItem("currentPassword", newEncryptedPassword)

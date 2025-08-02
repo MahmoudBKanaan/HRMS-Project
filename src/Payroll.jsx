@@ -153,20 +153,22 @@ const Payroll = () => {
                         Number(user.payroll.foodBenefits)+
                         Number(user.payroll.commissions)-
                         Number(user.payroll.deductions);
-                user.payments.map((payment) => {
-                    if (payment.status === "Paid") {
-                        madePaymentsNumber = madePaymentsNumber+1;
-                    } else if (payment.status === "Pending") {
-                        pendingPaymentsNumber = pendingPaymentsNumber+1;
-                    }
-                })
+                        if(user.payments !== null && user.payments !== undefined){
+                            user.payments.map((payment) => {
+                                if (payment.status === "Paid") {
+                                    madePaymentsNumber = madePaymentsNumber+1;
+                                } else if (payment.status === "Pending") {
+                                    pendingPaymentsNumber = pendingPaymentsNumber+1;
+                                }
+                            })
+                        }
             })
-            setMadePayments(madePaymentsNumber)
-            setPendingPayments(pendingPaymentsNumber)
-            setTotalPayroll(`$${totalPayroll.toLocaleString()}`)
-            setEmployeeNumber(EmployeeNumber)
-
+            
         })}
+        setMadePayments(madePaymentsNumber)
+        setPendingPayments(pendingPaymentsNumber)
+        setTotalPayroll(`$${totalPayroll.toLocaleString()}`)
+        setEmployeeNumber(EmployeeNumber)
         
     },[departments])
     
@@ -232,6 +234,7 @@ const confirmPayment = () => {
         {Object.entries(departments).map(([dept, users]) => {
                 let entry = [];
                 users.map((user, index) => {
+                if(user.payments !== null && user.payments !== undefined){
                 user.payments.map((payment) => {
                     entry = [...entry,
                         [user.name,
@@ -242,6 +245,7 @@ const confirmPayment = () => {
                             payment.status || "none"]
                     ]
                 })
+            }
             })
 
             return (

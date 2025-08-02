@@ -270,6 +270,7 @@ const Requests = () => {
             rejectRequest={rejectRequest}
          />
         }
+        
         {newRequest
         && currentDepartment !== null
         && currentUsers !== null  &&
