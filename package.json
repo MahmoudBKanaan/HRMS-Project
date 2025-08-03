@@ -1,7 +1,7 @@
 {
   "name": "hrmsapp",
   "private": true,
-  "homepage": "https://mahmoudbkanaan.github.io/HRMS-Project/",
+  "homepage": "https://mahmoudbkanaan.github.io/HRMS-Project",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
