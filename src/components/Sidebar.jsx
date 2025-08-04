@@ -65,7 +65,7 @@ export const Sidebar = () => {
 
   return (
     <aside className="side-bar">
-      <img src="/assets/logoWhite.png" className='mainLogo' />
+      <img src="./assets/logoWhite.png" className='mainLogo' />
       {isAdmin?
       <AdminList /> :
       < UserList  />
