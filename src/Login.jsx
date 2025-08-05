@@ -103,12 +103,12 @@ import  CryptoJS  from "crypto-js";
               </div>
               
         </div>
-        <div><img src="./assets/loginWoman.svg"  alt="loginWoman"  className='loginWoman'/></div>
-        <div><img src="./assets/login01.svg"     alt="login01"     className='login01'   /></div>
-        <div><img src="./assets/login02.svg"     alt="login02"     className='login02'   /></div>
-        <div><img src="./assets/login03.svg"     alt="login03"     className='login03'   /></div>
-        <div><img src="./assets/login04.svg"     alt="login04"     className='login04'   /></div>
-        <div><img src="./assets/loginMan.svg"    alt="loginMan"    className='loginMan'  /></div>
+        <div><img src="/assets/loginWoman.svg"  alt="loginWoman"  className='loginWoman'/></div>
+        <div><img src="/assets/login01.svg"     alt="login01"     className='login01'   /></div>
+        <div><img src="/assets/login02.svg"     alt="login02"     className='login02'   /></div>
+        <div><img src="/assets/login03.svg"     alt="login03"     className='login03'   /></div>
+        <div><img src="/assets/login04.svg"     alt="login04"     className='login04'   /></div>
+        <div><img src="/assets/loginMan.svg"    alt="loginMan"    className='loginMan'  /></div>
 
       </div>
     );
