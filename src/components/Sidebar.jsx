@@ -5,7 +5,7 @@ import "./Sidebar.css";
 import { FiSettings } from 'react-icons/fi';
 import { useContext } from 'react';
 import { AuthContext } from '/src/AuthContext';
-import defaultImage from "./assets/logoWhite.png";
+import defaultImage from "./src/assets/logoWhite.png";
 
 const AdminList = () => {
 return (
