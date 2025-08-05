@@ -5,6 +5,14 @@ import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from './AuthContext';
 import  CryptoJS  from "crypto-js";
 
+import Img1 from "../assets/loginWoman.svg";
+import Img2 from "../assets/login01.svg";
+import Img3 from "../assets/login02.svg";
+import Img4 from "../assets/login03.svg";
+import Img5 from "../assets/login04.svg";
+import Img6 from "../assets/loginMan.svg";
+
+
 
   export const getSecretKey = () => {
     const secretKey = "attentionIsTheCurrencyOfLife";
@@ -103,12 +111,12 @@ import  CryptoJS  from "crypto-js";
               </div>
               
         </div>
-        <div><img src="../assets/loginWoman.svg"  alt="loginWoman"  className='loginWoman'/></div>
-        <div><img src="../assets/login01.svg"     alt="login01"     className='login01'   /></div>
-        <div><img src="../assets/login02.svg"     alt="login02"     className='login02'   /></div>
-        <div><img src="../assets/login03.svg"     alt="login03"     className='login03'   /></div>
-        <div><img src="../assets/login04.svg"     alt="login04"     className='login04'   /></div>
-        <div><img src="../assets/loginMan.svg"    alt="loginMan"    className='loginMan'  /></div>
+        <div><img src={Img1}      alt="loginWoman"  className='loginWoman'/></div>
+        <div><img src={Img2}      alt="login01"     className='login01'   /></div>
+        <div><img src={Img3}      alt="login02"     className='login02'   /></div>
+        <div><img src={Img4}      alt="login03"     className='login03'   /></div>
+        <div><img src={Img5}      alt="login04"     className='login04'   /></div>
+        <div><img src={Img6}      alt="loginMan"    className='loginMan'  /></div>
 
       </div>
     );
