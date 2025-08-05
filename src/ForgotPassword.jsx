@@ -70,7 +70,7 @@ return (
       <div><img src={Img3}     alt="password02"     className='password02'   /></div>
       <div><img src={Img4}      alt="password03"     className='password03'   /></div>
       <div><img src={Img5}      alt="password04"     className='password04'   /></div>
-      <div><img src={Img63}     alt="passwordMan"    className='passwordMan'  /></div>
+      <div><img src={Img6}     alt="passwordMan"    className='passwordMan'  /></div>
 
     </div>
   );

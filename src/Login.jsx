@@ -6,7 +6,7 @@ import { AuthContext } from './AuthContext';
 import  CryptoJS  from "crypto-js";
 
 import Img1 from "./assets/loginWoman.svg";
-import Img2 from "./assets/login01.png";
+import Img2 from "./assets/login01.svg";
 import Img3 from "./assets/login02.svg";
 import Img4 from "./assets/login03.svg";
 import Img5 from "./assets/login04.svg";
