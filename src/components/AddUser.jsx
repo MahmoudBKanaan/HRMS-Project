@@ -1,7 +1,7 @@
 import { AuthContext } from "../AuthContext";
 import "./AddUser.css"
 import { useContext, useState } from "react";
-import defaultImage from "/assets/logoWhite.png"
+import defaultImage from "../assets/logoWhite.png"
 
 const AddUser = () => {
   
