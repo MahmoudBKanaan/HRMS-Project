@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import "./DepartmentTable.css"
-import { AuthContext } from "../AuthContext.jsx";
+import { AuthContext } from "./AuthContext.jsx";
 import Popup from "./Popup.jsx";
 
 

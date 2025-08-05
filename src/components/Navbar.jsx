@@ -2,7 +2,7 @@
 import { useContext, useEffect, useState } from "react";
 import { FiSettings, FiLogOut } from 'react-icons/fi';
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../AuthContext";
+import { AuthContext } from "./AuthContext";
 import "./Navbar.css";
 
 

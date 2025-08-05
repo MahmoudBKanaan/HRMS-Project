@@ -3,12 +3,12 @@ import { useState } from 'react'
 import { mockLogin } from '../mock-Server/mockLogin';
 import { Navigate ,useNavigate, Link } from 'react-router-dom';
 
-import Img1 from "../assets/loginWoman.svg";
-import Img2 from "../assets/login01.svg";
-import Img3 from "../assets/login02.svg";
-import Img4 from "../assets/login03.svg";
-import Img5 from "../assets/login04.svg";
-import Img6 from "../assets/loginMan.svg";
+import Img1 from "./assets/loginWoman.svg";
+import Img2 from "./assets/login01.svg";
+import Img3 from "./assets/login02.svg";
+import Img4 from "./assets/login03.svg";
+import Img5 from "./assets/login04.svg";
+import Img6 from "./assets/loginMan.svg";
 
 
 
@@ -70,7 +70,7 @@ return (
       <div><img src={Img3}     alt="password02"     className='password02'   /></div>
       <div><img src={Img4}      alt="password03"     className='password03'   /></div>
       <div><img src={Img5}      alt="password04"     className='password04'   /></div>
-      <div><img src={Img6}     alt="passwordMan"    className='passwordMan'  /></div>
+      <div><img src={Img63}     alt="passwordMan"    className='passwordMan'  /></div>
 
     </div>
   );
