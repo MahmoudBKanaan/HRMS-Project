@@ -5,6 +5,7 @@ import "./Sidebar.css";
 import { FiSettings } from 'react-icons/fi';
 import { useContext } from 'react';
 import { AuthContext } from '/src/AuthContext';
+import defaultImage from "/assets/logoWhite.png";
 
 const AdminList = () => {
 return (
@@ -65,7 +66,7 @@ export const Sidebar = () => {
 
   return (
     <aside className="side-bar">
-      <img src="/assets/logoWhite.png" className='mainLogo' />
+      <img src={defaultImage} className='mainLogo' />
       {isAdmin?
       <AdminList /> :
       < UserList  />
