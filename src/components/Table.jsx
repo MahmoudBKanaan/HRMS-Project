@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { AuthContext } from "./AuthContext.jsx";
+import { AuthContext } from "/src/AuthContext.jsx";
 import "./DepartmentTable.css"
 
 

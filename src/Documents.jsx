@@ -3,7 +3,7 @@ import { Navbar } from '/src/components/Navbar';
 import "./Documents.css";
 import Table from "./components/Table";
 import { useContext, useState } from "react";
-import { AuthContext } from "./AuthContext";
+import { AuthContext } from "/src/AuthContext";
 import jsPDF from "jspdf";
 import UploadDocumentPopup from "./components/UploadDocumentPopup";
 

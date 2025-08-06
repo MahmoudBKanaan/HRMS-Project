@@ -1,7 +1,7 @@
 
 import { Routes, Route, Navigate} from 'react-router-dom';
 import RouteProtection from "./RouteProtection.jsx";
-import { AuthContext } from './AuthContext.jsx';
+import { AuthContext } from '/src/AuthContext.jsx';
 import { useContext, useEffect } from 'react';
 
 import Login  from './Login.jsx';

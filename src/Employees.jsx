@@ -3,7 +3,7 @@ import { Navbar } from '/src/components/Navbar';
 import { useContext, useState } from "react";
 import AddUser from "./components/AddUser";
 import DepartmentTable from "./components/DepartmentTable";
-import { AuthContext } from "./AuthContext";
+import { AuthContext } from "/src/AuthContext";
 import EditingPage from "./components/EditingPage";
 import UserDetails from "./components/userDetails";
 import "./Employees.css";

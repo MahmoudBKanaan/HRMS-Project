@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import './Login.css'
 import { mockLogin } from '../mock-Server/mockLogin';
 import { useNavigate, Link } from 'react-router-dom';
-import { AuthContext } from './AuthContext';
+import { AuthContext } from '/src/AuthContext';
 import  CryptoJS  from "crypto-js";
 
 import Img1 from "./assets/loginWoman.svg";

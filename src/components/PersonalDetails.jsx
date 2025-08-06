@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import "./PersonalDetails.css";
-import { AuthContext } from "./AuthContext";
+import { AuthContext } from "/src/AuthContext";
 
 
 

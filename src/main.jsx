@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import "tailwindcss";
 import { BrowserRouter } from 'react-router-dom';
-import { AuthProvider} from "./AuthContext.jsx";
+import { AuthProvider} from "/src/AuthContext.jsx";
 
 
 createRoot(document.getElementById('root')).render(

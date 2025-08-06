@@ -1,7 +1,7 @@
 import { FaUsers, FaCheckCircle, FaMoneyBillWave } from 'react-icons/fa';
 import "./StatsContainer.css"
 import { useContext } from 'react';
-import { AuthContext } from '../AuthContext';
+import { AuthContext } from '/src/AuthContext';
 
 
 

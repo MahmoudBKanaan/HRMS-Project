@@ -1,4 +1,4 @@
-import {AuthContext} from "./AuthContext"
+import {AuthContext} from "/src/AuthContext"
 import { useContext } from "react"
 import { Navigate } from "react-router-dom";
 import "./RouteProtection.css";

@@ -3,7 +3,7 @@ import { Navbar } from '/src/components/Navbar';
 import { FaUsers, FaCheckCircle, FaExclamationCircle ,FaRegClock  } from 'react-icons/fa';
 import { StatsCard } from "./Attendance";
 import { useContext, useState } from "react";
-import { AuthContext } from "./AuthContext";
+import { AuthContext } from "/src/AuthContext";
 import Table from "./components/Table.jsx";
 import { useEffect } from "react";
 import Popup from "./components/Popup.jsx";

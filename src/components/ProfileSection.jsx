@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import "./ProfileSection.css";
 import "/src/index.css";
-import { AuthContext } from "./AuthContext";
+import { AuthContext } from "/src/AuthContext";
 
 
 

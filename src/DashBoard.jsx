@@ -5,7 +5,7 @@ import { StatsContainer } from "/src/components/StatsContainer"
 import {PersonalDetails} from "/src/components/PersonalDetails"
 import "./DashBoard.css";
 import { useContext, useEffect } from "react";
-import { AuthContext } from "./AuthContext";
+import { AuthContext } from "/src/AuthContext";
 
 
 
