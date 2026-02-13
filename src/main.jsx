@@ -9,7 +9,7 @@ import { AuthProvider} from "/src/AuthContext.jsx";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/HRMS-Project" >
+    <BrowserRouter basename="/hrms-project" >
       <AuthProvider>
 
         <App />
