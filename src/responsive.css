@@ -1,0 +1,397 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  display: block;
+}
+
+.dashboardContainer,
+.EmployeesContainer,
+.AttendanceContainer,
+.RequestsContainer,
+.PayrollContainer,
+.DocumentsContainer,
+.SettingsContainer {
+  min-height: 100vh;
+  height: auto;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.mainContent {
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+@media (max-width: 800px) {
+  .dashboardContainer,
+  .EmployeesContainer,
+  .AttendanceContainer,
+  .RequestsContainer,
+  .PayrollContainer,
+  .DocumentsContainer,
+  .SettingsContainer {
+    display: flex !important;
+    width: 100% !important;
+    min-height: 100svh;
+    height: auto !important;
+    padding-bottom: 76px;
+  }
+
+  .mainContent {
+    width: 100% !important;
+    min-height: 100svh;
+    height: auto !important;
+    padding-bottom: 16px;
+  }
+
+  .side-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100% !important;
+    min-height: 64px !important;
+    height: 64px;
+    padding: 0 8px;
+    background-color: #172b3f;
+    box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.28);
+  }
+
+  .mainLogo {
+    display: none;
+  }
+
+  .navListGroup,
+  .navListGroup nav {
+    width: 100%;
+  }
+
+  .navList {
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0;
+    gap: 2px;
+  }
+
+  .navList li {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .navItem {
+    width: 100% !important;
+    height: 56px !important;
+    padding: 0 4px !important;
+    margin: 0 !important;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px !important;
+    font-size: clamp(0.62rem, 2.6vw, 0.82rem) !important;
+    text-align: center;
+    line-height: 1.1;
+    overflow: hidden;
+  }
+
+  .navItem svg {
+    flex: 0 0 auto;
+    font-size: 1.15rem;
+  }
+
+  .navbar {
+    width: 100%;
+    gap: 12px !important;
+    padding: 12px 14px 8px !important;
+    align-items: center !important;
+  }
+
+  .navbar-title {
+    font-size: clamp(1.45rem, 7vw, 2rem) !important;
+    margin: 0 0 6px 0 !important;
+    line-height: 1.05;
+  }
+
+  .navbar-text {
+    font-size: clamp(0.9rem, 3.8vw, 1.08rem) !important;
+    margin: 0 !important;
+    line-height: 1.3;
+  }
+
+  .avatar {
+    width: 56px !important;
+    height: 56px !important;
+    padding: 0 !important;
+    transform: none !important;
+  }
+
+  .dropdown {
+    top: 74px !important;
+    right: 12px !important;
+    width: 150px !important;
+    height: auto !important;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .dropdownListItem {
+    width: 150px !important;
+    height: 44px !important;
+    font-size: 0.95rem !important;
+  }
+
+  .container,
+  .RequestsTablesContainer,
+  .paymentTablesContainer,
+  .documentsTablesContainer,
+  .tablesSection {
+    display: flex !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none;
+    padding: 8px 12px 24px !important;
+    margin: 0 !important;
+    overflow-y: visible !important;
+    overflow-x: hidden !important;
+  }
+
+  .department,
+  .tableSection {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 18px 0 !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .department h2,
+  .tableSectionTitle {
+    font-size: 1.15rem !important;
+    margin: 8px 0 10px !important;
+    padding: 0 !important;
+    line-height: 1.2;
+  }
+
+  table,
+  .attendanceTable {
+    min-width: 720px;
+    width: 100%;
+  }
+
+  th,
+  td,
+  .attendanceTable th,
+  .attendanceTable td {
+    font-size: 0.82rem !important;
+    padding: 10px 12px !important;
+    line-height: 1.25;
+    white-space: normal;
+  }
+
+  .tableCell {
+    max-width: 180px !important;
+    overflow-wrap: anywhere;
+  }
+
+  .add-user {
+    position: static !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    margin: 0 0 10px 0 !important;
+    padding: 10px 14px !important;
+    font-size: 0.95rem !important;
+    border-radius: 6px !important;
+  }
+
+  .action-container {
+    width: 44px !important;
+  }
+
+  .menu-icon {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 1.2rem !important;
+  }
+
+  .actionDropdown {
+    left: auto !important;
+    right: 0;
+    width: 168px !important;
+    border-radius: 6px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .actionDropdown div {
+    min-height: 40px;
+    padding: 10px 8px !important;
+  }
+
+  .cardsContainer,
+  .statsContainer {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100% !important;
+    transform: none !important;
+    gap: 10px !important;
+    margin: 8px 0 14px !important;
+    padding: 0 12px !important;
+  }
+
+  .cardContainer,
+  .statsCard {
+    width: 100% !important;
+    min-height: 82px;
+    border-radius: 8px !important;
+    padding: 12px !important;
+  }
+
+  .statsCard {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+
+  .iconWrapper2,
+  .iconWrapper {
+    font-size: clamp(1rem, 4vw, 1.25rem) !important;
+    gap: 10px !important;
+    padding: 0 !important;
+    line-height: 1.2 !important;
+  }
+
+  .cardIcon2,
+  .cardIcon {
+    font-size: 1.55rem !important;
+  }
+
+  .cardLabel2,
+  .cardLabel {
+    padding: 10px 0 0 0 !important;
+    transform: none !important;
+    font-size: 0.95rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .cardLabel2 p,
+  .cardLabel p {
+    margin: 0;
+  }
+
+  .form-container {
+    display: flex !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100svh !important;
+    padding: 16px 12px 88px !important;
+    overflow-y: auto;
+    background-color: #0d1b2b;
+    z-index: 80;
+  }
+
+  .input-group,
+  .selectionSection,
+  .button-group {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100%;
+    padding: 0 !important;
+    gap: 8px !important;
+  }
+
+  .inputField,
+  .selectionSection select,
+  .imageButton {
+    width: 100% !important;
+    min-height: 42px;
+    font-size: 1rem !important;
+    border-radius: 6px !important;
+  }
+
+  .cancel-btn,
+  .create-btn {
+    width: 100% !important;
+    min-height: 44px;
+    font-size: 1rem !important;
+    padding: 10px 12px !important;
+  }
+
+  .payroll-container,
+  .uploadDocumentPopupForm,
+  .question-popup-container {
+    width: min(92vw, 420px) !important;
+    max-height: 86svh;
+    height: auto !important;
+    overflow-y: auto;
+    padding: 18px !important;
+    border-radius: 10px !important;
+  }
+
+  .title,
+  .formTitle,
+  .question-popup-title {
+    font-size: 1.35rem !important;
+  }
+
+  .form-grid {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .form-group,
+  .formInputField,
+  .fileButton,
+  .uploadDocumentPopupForm button {
+    width: 100% !important;
+  }
+
+  label,
+  input,
+  .download-btn,
+  .question-popup-container p,
+  .question-popup-buttons button {
+    font-size: 1rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .question-popup-buttons {
+    width: 100%;
+    gap: 10px !important;
+  }
+
+  .question-popup-buttons button {
+    width: 100% !important;
+    min-height: 42px;
+    padding: 10px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .cardsContainer,
+  .statsContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .navItem {
+    font-size: 0.58rem !important;
+  }
+}

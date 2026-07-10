@@ -4,7 +4,7 @@ import { FaUsers, FaCheckCircle, FaMoneyBillWave,FaRegClock  } from 'react-icons
 import { useContext , useEffect, useState} from 'react';
 import { AuthContext } from '/src/AuthContext';
 import "/src/components/StatsContainer.css"
-import "./attendance.css"
+import "./Attendance.css"
 
 
 export const StatsCard = ({ icon, label, value, sub }) => (

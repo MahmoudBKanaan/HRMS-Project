@@ -5,7 +5,7 @@ import AddUser from "./components/AddUser";
 import DepartmentTable from "./components/DepartmentTable";
 import { AuthContext } from "/src/AuthContext";
 import EditingPage from "./components/EditingPage";
-import UserDetails from "./components/userDetails";
+import UserDetails from "./components/UserDetails";
 import "./Employees.css";
 
 

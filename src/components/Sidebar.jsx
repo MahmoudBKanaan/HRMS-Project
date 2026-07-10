@@ -7,50 +7,50 @@ import { useContext } from 'react';
 import { AuthContext } from '/src/AuthContext';
 import defaultImage from "/src/assets/logoWhite.png";
 
-const AdminList = () => {
+const AdminList = ({ pathname }) => {
 return (
     <div className="navListGroup">
     <nav>
     <ul className="navList">
     <li ><Link 
-    className={`navItem ${location.pathname === "/dashboard" ? "active" : ""}`} 
+    className={`navItem ${pathname === "/dashboard" ? "active" : ""}`} 
     to="/dashboard" ><FaHome /> DashBoard </Link></li>
     <li ><Link 
-      className={`navItem ${location.pathname === "/employees" ? "active" : ""}`} 
+      className={`navItem ${pathname === "/employees" ? "active" : ""}`} 
       to="/employees" ><FaUser /> Employees </Link></li>
     <li ><Link 
-      className={`navItem ${location.pathname === "/attendance" ? "active" : ""}`} 
+      className={`navItem ${pathname === "/attendance" ? "active" : ""}`} 
       to="/attendance" ><FaCheckCircle /> Attendance</Link></li>
     <li ><Link 
-      className={`navItem ${location.pathname === "/payroll" ? "active" : ""}`} 
+      className={`navItem ${pathname === "/payroll" ? "active" : ""}`} 
       to="/payroll" ><FaMoneyBillWave /> Payroll </Link></li>
     <li ><Link 
-       className={`navItem ${location.pathname === "/documents" ? "active" : ""}`} 
+       className={`navItem ${pathname === "/documents" ? "active" : ""}`} 
        to="/documents" ><FaFileAlt /> Documents</Link></li>
     <li ><Link 
-       className={`navItem ${location.pathname === "/requests" ? "active" : ""}`} 
+       className={`navItem ${pathname === "/requests" ? "active" : ""}`} 
        to="/requests" > <MdRequestPage /> Requests</Link></li>
     <li ><Link 
-       className={`navItem ${location.pathname === "/settings" ? "active" : ""}`} 
+       className={`navItem ${pathname === "/settings" ? "active" : ""}`} 
        to="/settings" ><FiSettings /> Settings</Link></li>
     </ul>
     </nav>
     </div>
 )}
 
-const UserList = () => {
+const UserList = ({ pathname }) => {
   return (
     <div className="navListGroup">
     <nav>
     <ul className="navList">
     <li ><Link 
-    className={`navItem ${location.pathname === "/dashboard" ? "active" : ""}`} 
+    className={`navItem ${pathname === "/dashboard" ? "active" : ""}`} 
     to="/dashboard" ><FaHome /> DashBoard </Link></li>
     <li ><Link 
-       className={`navItem ${location.pathname === "/requests" ? "active" : ""}`} 
+       className={`navItem ${pathname === "/requests" ? "active" : ""}`} 
        to="/requests" > <MdRequestPage /> Requests</Link></li>
     <li ><Link 
-       className={`navItem ${location.pathname === "/settings" ? "active" : ""}`} 
+       className={`navItem ${pathname === "/settings" ? "active" : ""}`} 
        to="/settings" ><FiSettings /> Settings</Link></li>
     </ul>
     </nav>
@@ -68,8 +68,8 @@ export const Sidebar = () => {
     <aside className="side-bar">
       <img src={defaultImage} className='mainLogo' />
       {isAdmin?
-      <AdminList /> :
-      < UserList  />
+      <AdminList pathname={location.pathname} /> :
+      < UserList pathname={location.pathname} />
       }
     </aside>
   )};
